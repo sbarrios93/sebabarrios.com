@@ -1,5 +1,0 @@
-{
-    "layout": "post",
-    "tag": "Deep Learning",
-    "permalink": "{{ title | slug }}/"
-}
