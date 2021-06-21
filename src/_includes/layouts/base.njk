@@ -11,30 +11,11 @@
   <body{% if customClass %} class="{{ customClass }}"{% endif %}>
 
     <script>
-      function showTheme() {
-        const btn = document.getElementById("toggle-dark-light");
-        let toggleIcon = btn.firstElementChild;
-        const currentTheme = localStorage.getItem("theme");
-        if (currentTheme === "dark") {
-          document
-            .body
-            .classList
-            .toggle("dark-theme");
-          toggleIcon.src = "/img/nav/sun.svg";
-        } else if (currentTheme === "light") {
-          document
-            .body
-            .classList
-            .toggle("light-theme");
-          toggleIcon.src = "/img/nav/moon.svg";
-        }
-      }
       function showContent() {
         document.body.style.visibility = 'visible';
         document.body.style.opacity = 1;
       }
       window.addEventListener('DOMContentLoaded', (event) => {
-        showTheme();
         showContent();
       });
     </script>

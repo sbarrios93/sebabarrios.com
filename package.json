@@ -55,6 +55,7 @@
     "core-js": "^3.12.1",
     "csp-hash-generator": "0.0.3",
     "csso": "^4.0.3",
+    "dark-mode-toggle": "^0.8.0",
     "datauri": "^3.0.0",
     "eleventy-plugin-nesting-toc": "^1.2.0",
     "expect.js": "^0.3.1",

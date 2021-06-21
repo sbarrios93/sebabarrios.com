@@ -6,7 +6,7 @@ nav {
   left: 0;
   width: 100vw;
   padding: 0 1.5rem;
-  background: $color-bg-nav;
+  background: --color-bg-nav;
 
   nav #nav .nav-search .nav-search__input {
     padding-right: 1.5rem;
@@ -125,7 +125,7 @@ nav {
         max-height: 80vh;
         overflow: auto;
         width: 100%;
-        background: $color-bg-nav;
+        background: --color-bg-nav;
         border-bottom-right-radius: 5px;
         border-bottom-left-radius: 5px;
         padding: 0;

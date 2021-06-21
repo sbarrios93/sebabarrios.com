@@ -12,7 +12,7 @@ header nav {
 
 /*! purgecss start ignore */
 header {
-  background: $color-background;
+  // background: $color-background;
   color: $font-color;
 
   .header-container {
@@ -99,27 +99,7 @@ header {
   }
 }
 
-.wave-border {
-  &::after {
-    content: "";
-    left: -3rem;
-    top: calc(3rem - 4rem / 2);
-    float: left;
-    display: block;
-    height: 2rem;
-    width: 100%;
-    background-size: 100% 100%;
-  }
-  &.wave-border-index::after {
-    background: hsla(0, 0%, 100%, 0.5);
-    background-image: var(--wave-bd-index);
-  }
-  &.wave-border-post::after {
-    background: #fff;
-    background-image: var(--wave-bd-post);
-  }
-}
-
+// FIXME 
 #reading-progress {
   z-index: 3;
   border-bottom: 1px solid $color-yellow;

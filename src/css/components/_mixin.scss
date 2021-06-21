@@ -65,6 +65,7 @@
   --table-bg: #{$table-bg};
   --badge-green: #{$badge-green};
   --badge-blue: #{$badge-blue};
+  --color-bg-nav: #{$color-background};
 }
 
 @mixin light-vars() {
@@ -100,4 +101,5 @@
   --table-bg: #{$table-bg-light};
   --badge-green: #{$badge-green-light};
   --badge-blue: #{$badge-blue-light};
+  --color-bg-nav: #{$color-background-light};
 }

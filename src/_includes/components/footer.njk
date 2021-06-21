@@ -32,13 +32,11 @@
 {# elasticlunr #}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
 
-{# {% if googleanalytics %}
-	<script async defer src="{{ "/src/js/cached.js" | addHash }}"></script>
-{% endif %} #}
 
 {% if env.environment != "local" %}
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-K3YRSB918B"></script>
+  {# FIXME Add Google Tag to#}
+	<script async src=""></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() {
