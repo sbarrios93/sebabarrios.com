@@ -415,5 +415,12 @@ const addSelected2 = (ulRes, li) => {
   );
 })(window, document);
 
-// dark/light toggle
-// -----------------------------------------
+// Add shadow to nav bar on scroll
+window.addEventListener('scroll',(e)=>{
+  const nav = document.querySelector('nav');
+  if(window.pageYOffset>5){
+    nav.classList.add("nav-shadow");
+  }else{
+    nav.classList.remove("nav-shadow");
+  }
+});
