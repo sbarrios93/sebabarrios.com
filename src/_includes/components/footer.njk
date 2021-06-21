@@ -1,5 +1,5 @@
 <footer>
-  <a href="{{ '/' | url }}" target="_blank">Thi
+  <a href="{{ '/' | url }}" target="_blank">Sebastián Barrios
     &nbsp;&copy;&nbsp;
     {{ helpers.currentYear() }}
   </a>
@@ -12,21 +12,6 @@
     About me
   </a>
   &nbsp;&bull;&nbsp;
-	<a href="https://photos.app.goo.gl/9OVEkdTjmtRPg7vC3" target="_blank">
-    My sketches
-  </a>
-  &nbsp;&bull;&nbsp;
-	<a href="https://goo.gl/photos/yQXdQws1LLS16x5v5" target="_blank">
-    I cook
-  </a>
-  &nbsp;&bull;&nbsp;
-  <a href="/for-me-only/">
-    For me only
-  </a>
-  &nbsp;&bull;&nbsp;
-  <a href="/donate/">
-    Support Thi
-  </a>
 </footer>
 
 {# elasticlunr #}
@@ -34,17 +19,7 @@
 
 
 {% if env.environment != "local" %}
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-  {# FIXME Add Google Tag to#}
-	<script async src=""></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-		gtag('config', 'G-K3YRSB918B');
-	</script>
+{# TODO: Add GA link #}
 {% endif %}
 
 <script async defer src="{{ "/src/js/min.js" | addHash }}"></script>
