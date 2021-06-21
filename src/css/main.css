@@ -214,36 +214,14 @@ body.dark-theme {
 .fontello-icon:before {
   margin-left: 0 !important; }
 
-/* line 19, src/css/components/_main.scss */
-::-webkit-scrollbar {
-  height: 10px;
-  width: 10px; }
-
-/* line 23, src/css/components/_main.scss */
-::-webkit-scrollbar-thumb {
-  background: #4f5c98;
-  border-radius: 6px; }
-  /* line 27, src/css/components/_main.scss */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #aaa;
-    cursor: pointer; }
-
-/* line 32, src/css/components/_main.scss */
-::-webkit-scrollbar-track {
-  background: #363948; }
-
-/* line 35, src/css/components/_main.scss */
-::-webkit-scrollbar-corner {
-  background: #282a36; }
-
 /*! purgecss end ignore */
-/* line 41, src/css/components/_main.scss */
+/* line 20, src/css/components/_main.scss */
 share-widget {
   position: fixed;
   right: 20px;
   bottom: 20px;
   opacity: 0.9; }
-  /* line 47, src/css/components/_main.scss */
+  /* line 26, src/css/components/_main.scss */
   share-widget div {
     width: 30px;
     height: 30px;
@@ -251,29 +229,29 @@ share-widget {
     background-repeat: no-repeat;
     background-position: center; }
 
-/* line 56, src/css/components/_main.scss */
+/* line 35, src/css/components/_main.scss */
 .apple share-widget div {
   background-image: url("/img/share-apple.svg"); }
 
-/* line 60, src/css/components/_main.scss */
+/* line 39, src/css/components/_main.scss */
 share-widget button {
   margin: 0; }
-  /* line 63, src/css/components/_main.scss */
+  /* line 42, src/css/components/_main.scss */
   share-widget button:active {
     transform: scale(1.2); }
 
-/* line 68, src/css/components/_main.scss */
+/* line 47, src/css/components/_main.scss */
 html {
   -webkit-text-size-adjust: 100%;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 16px; }
 
 @supports (font-variation-settings: normal) {
-  /* line 75, src/css/components/_main.scss */
+  /* line 54, src/css/components/_main.scss */
   html {
     font-family: "Inter" var alt, Arial, Helvetica, sans-serif; } }
 
-/* line 80, src/css/components/_main.scss */
+/* line 59, src/css/components/_main.scss */
 body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   background: var(--color-background);
@@ -281,7 +259,7 @@ body {
   margin: 0;
   font-size: 16px; }
 
-/* line 88, src/css/components/_main.scss */
+/* line 67, src/css/components/_main.scss */
 .test-dead-code-elimination-sentinel {
   color: red; }
 
@@ -292,137 +270,137 @@ body {
   Context
   - https://web.dev/content-visibility/#skipping-rendering-work-with-content-visibility
  */
-/* line 99, src/css/components/_main.scss */
+/* line 78, src/css/components/_main.scss */
 main img {
   content-visibility: auto; }
 
-/* line 103, src/css/components/_main.scss */
+/* line 82, src/css/components/_main.scss */
 b,
 strong {
   font-weight: var(--font-bold-color-weight);
   color: var(--font-bold-color); }
 
-/* line 109, src/css/components/_main.scss */
+/* line 88, src/css/components/_main.scss */
 dialog {
   background-color: #8dff80;
   position: fixed;
   opacity: 0.9; }
 
-/* line 115, src/css/components/_main.scss */
+/* line 94, src/css/components/_main.scss */
 small {
   font-size: 80%; }
 
-/* line 119, src/css/components/_main.scss */
+/* line 98, src/css/components/_main.scss */
 sub {
   bottom: -0.25em; }
 
-/* line 123, src/css/components/_main.scss */
+/* line 102, src/css/components/_main.scss */
 sup {
   top: -0.5em; }
 
-/* line 127, src/css/components/_main.scss */
+/* line 106, src/css/components/_main.scss */
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
   padding: 0; }
 
-/* line 134, src/css/components/_main.scss */
+/* line 113, src/css/components/_main.scss */
 [type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
-/* line 140, src/css/components/_main.scss */
+/* line 119, src/css/components/_main.scss */
 [type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px; }
-  /* line 144, src/css/components/_main.scss */
+  /* line 123, src/css/components/_main.scss */
   [type="search"]::-webkit-search-decoration {
     -webkit-appearance: none; }
 
-/* line 149, src/css/components/_main.scss */
+/* line 128, src/css/components/_main.scss */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit; }
 
-/* line 154, src/css/components/_main.scss */
+/* line 133, src/css/components/_main.scss */
 mark {
   color: inherit;
   padding: 0;
   background-color: transparent;
   box-shadow: inset 0 -5px 0 #ffd479; }
 
-/* line 161, src/css/components/_main.scss */
+/* line 140, src/css/components/_main.scss */
 a {
   color: var(--font-a);
   text-decoration: none; }
-  /* line 165, src/css/components/_main.scss */
+  /* line 144, src/css/components/_main.scss */
   a:hover {
     text-decoration: none;
     border-bottom: 3px solid var(--font-a);
     color: var(--a-hover); }
-  /* line 172, src/css/components/_main.scss */
+  /* line 151, src/css/components/_main.scss */
   a.no-effect:hover {
     border-bottom: none; }
-  /* line 177, src/css/components/_main.scss */
+  /* line 156, src/css/components/_main.scss */
   a.no-color {
     color: var(--font-color) !important; }
-  /* line 181, src/css/components/_main.scss */
+  /* line 160, src/css/components/_main.scss */
   a strong,
   a b {
     color: var(--font-a); }
-    /* line 184, src/css/components/_main.scss */
+    /* line 163, src/css/components/_main.scss */
     a strong:hover,
     a b:hover {
       color: var(--a-hover); }
 
-/* line 190, src/css/components/_main.scss */
+/* line 169, src/css/components/_main.scss */
 hr {
   border-bottom: 1px solid #eee; }
 
-/* line 194, src/css/components/_main.scss */
+/* line 173, src/css/components/_main.scss */
 img {
   max-width: 100%; }
 
-/* line 198, src/css/components/_main.scss */
+/* line 177, src/css/components/_main.scss */
 .filter-invert {
   filter: var(--filter-invert); }
 
-/* line 202, src/css/components/_main.scss */
+/* line 181, src/css/components/_main.scss */
 main {
   margin: 0 auto; }
 
-/* line 206, src/css/components/_main.scss */
+/* line 185, src/css/components/_main.scss */
 .list-of-post {
   list-style: none;
   padding-left: 0;
   margin-bottom: 0; }
-  /* line 210, src/css/components/_main.scss */
+  /* line 189, src/css/components/_main.scss */
   .list-of-post .fontello-icon {
     margin-left: -25px; }
-    /* line 212, src/css/components/_main.scss */
+    /* line 191, src/css/components/_main.scss */
     .list-of-post .fontello-icon::before {
       opacity: 0.75; }
-  /* line 216, src/css/components/_main.scss */
+  /* line 195, src/css/components/_main.scss */
   .list-of-post li {
     margin-bottom: 10px !important;
     padding-right: 10px;
     padding-left: 25px;
     width: 100%; }
-    /* line 221, src/css/components/_main.scss */
+    /* line 200, src/css/components/_main.scss */
     .list-of-post li a {
       color: var(--a-list-homepage);
       border-bottom: 2px dotted var(--a-list-homepage-bd); }
-    /* line 225, src/css/components/_main.scss */
+    /* line 204, src/css/components/_main.scss */
     .list-of-post li:hover {
       cursor: pointer; }
-      /* line 226, src/css/components/_main.scss */
+      /* line 205, src/css/components/_main.scss */
       .list-of-post li:hover a {
         border-color: var(--font-a);
         color: var(--color-invert); }
-      /* line 231, src/css/components/_main.scss */
+      /* line 210, src/css/components/_main.scss */
       .list-of-post li:hover::before {
         opacity: 1; }
 
-/* line 238, src/css/components/_main.scss */
+/* line 217, src/css/components/_main.scss */
 .note-type-indicator {
   font-size: 0.95rem;
   color: var(--color-faded);
@@ -430,10 +408,10 @@ main {
   font-style: italic;
   padding-top: 10px;
   border-top: 1px solid var(--toc-title-bd); }
-  /* line 245, src/css/components/_main.scss */
+  /* line 224, src/css/components/_main.scss */
   .note-type-indicator span {
     margin-right: 5px; }
-    /* line 247, src/css/components/_main.scss */
+    /* line 226, src/css/components/_main.scss */
     .note-type-indicator span:last-child {
       margin-right: 0; }
 
