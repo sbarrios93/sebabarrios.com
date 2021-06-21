@@ -37,12 +37,6 @@
     "fontello": "icon-ts"
 	},
 	{
-		"name": "NLP",
-		"color": "#eac1ea",
-		"svg": "/img/cats/nlp.svg",
-    "fontello": "icon-chatbot"
-	},
-	{
 		"name": "MLOps",
 		"color": "#a0ffa0",
 		"svg": "/img/cats/mlops.svg",

@@ -244,6 +244,7 @@ _L-layer deep neural network. Image from the course._
     3. Backward propagation
     4. Update parameters (using parameters, and grads from backprop)
 3. Use trained parameters to predict labels.
+
 </div>
 </div>
 
