@@ -187,7 +187,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "src/img": "img" });
   eleventyConfig.addPassthroughCopy({ "src/files": "files" }); // for personal files
-  eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("./src/css");
   // We need to copy cached.js only if GA is used
   eleventyConfig.addPassthroughCopy(GA_ID ? "src/js" : "src/js/*[!cached].*");
   eleventyConfig.addPassthroughCopy({ "src/fonts": "fonts" }); // Copy `src/fonts` to `_site/fonts`
@@ -198,6 +198,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/js/");
   // We need to rebuild on CSS change to inline it.
   eleventyConfig.addWatchTarget("./src/css/");
+  eleventyConfig.addWatchTarget("./src/css/main.scss");
   // Unfortunately this means .eleventyignore needs to be maintained redundantly.
   // But without this the JS build artefacts doesn't trigger a build.
   eleventyConfig.setUseGitIgnore(false);
@@ -305,7 +306,7 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    templateFormats: ["md", "njk", "html", "liquid", "css"],
+    templateFormats: ["md", "njk", "html", "liquid"],
 
     // If your site lives in a different subdirectory, change this.
     // Leading or trailing slashes are all normalized away, so don’t worry about those.

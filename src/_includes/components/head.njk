@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Security-Policy" content="{{ csp.regular | safe }}">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-
+  <link rel="stylesheet" href="/src/css/main.css">
   <meta name="theme-color" content="#f9c412">
   <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview: -1">
   <title>{{ title or renderData.title or metadata.title | escape }}</title>
@@ -44,8 +44,7 @@
   <!-- The loading of KaTeX is deferred to speed up page rendering -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH" crossorigin="anonymous"></script>
 
-  {# Google Dark Mode Module #}
-  <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
+
   <link rel="stylesheet" href="/fontello/css/fontello.css">
 
   <style>
