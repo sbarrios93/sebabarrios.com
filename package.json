@@ -4,17 +4,16 @@
   "license": "MIT",
   "description": "A personal website for note-taking built based on 11ty engine with high performance.",
   "scripts": {
-    "build": "npx rimraf -rf _site && npm run js:build && npm run css:build && eleventy && echo \"Starting copy...\" && mkdir -p _live && cp -Rf _site/* _live/ && echo \"End copy.\"",
-    "local:watch": "ELEVENTY_ENV=local concurrently \"eleventy --serve\" \"npm run js:build-watch\" \"npm run css:watch-local\"",
-    "local:build": "npx rimraf -rf _site && npm run js:build && npm run css:build-local && cross-env ELEVENTY_ENV=local eleventy --quiet && echo \"Starting copy...\" && cp -Rf _site/* _live/ && echo \"End copy.\"",
-    "local:serve": "echo \"Starting copy...\" && cp -Rf _site/* _live/ && echo \"End copy.\" && http-server _live",
-    "css:build": "node-sass src/css/main.scss -o src/css",
-    "css:build-local": "node-sass --source-comments src/css/main.scss -o src/css",
-    "css:watch-local": "node-sass src/css/main.scss -w -o src/css",
-    "js:build": "rollup -c src/rollup.config.js",
-    "js:build-watch": "rollup -c src/rollup.config.js -w",
-    "debug": "DEBUG=* eleventy",
-    "start": "npm-run-all --parallel css:watch-local-_site watch:eleventy"
+    "watch:sass": "sass --watch src/css:_site/src/css",
+    "watch:sass-local": "node-sass --watch src/css/main.scss -o src/css",
+    "build:sass": "sass src/css:src/css",
+    "build:js": "rollup -c src/rollup.config.js",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "eleventy",
+    "build-watch:js": "rollup -c src/rollup.config.js -w",
+    "set-env": "ELEVENTY_ENV=local",
+    "start": "npm-run-all set-env build:sass build:js --parallel watch:*",
+    "build": "npm-run-all build:*"
   },
   "repository": {
     "type": "git",
