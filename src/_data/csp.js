@@ -60,7 +60,8 @@ const CSP = {
 			"https://use.fontawesome.com/",
 			quote("unsafe-inline"),
 			"https://github.githubassets.com/", // gist
-			"https://cdn.jsdelivr.net" // katex
+			"https://cdn.jsdelivr.net",  // katex
+			"https://rsms.me" // Inter font
 		],
 		// Images may also come from data-URIs.
 		["img-src", SELF, "data:"],
@@ -69,7 +70,8 @@ const CSP = {
 			SELF,
 			"https://fonts.gstatic.com/",
 			"https://use.fontawesome.com/",
-			"https://cdn.jsdelivr.net" // katex
+			"https://cdn.jsdelivr.net", // katex
+			"https://rsms.me" // Inter font
 		],
 
 		// To add new rules, add new array literals here or extend those above with
