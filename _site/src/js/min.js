@@ -408,35 +408,15 @@
     );
   })(window, document);
 
-  // dark/light toggle
-  // -----------------------------------------
-  const btn = document.getElementById("toggle-dark-light");
-  let toggleIcon = btn.firstElementChild;
-
-  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-  btn.addEventListener("click", function () {
-    if (prefersDarkScheme.matches) {
-      document.body.classList.toggle("light-theme");
-      var theme = document.body.classList.contains("light-theme")
-        ? "light"
-        : "dark";
-      toggleIconFn(theme);
-    } else {
-      document.body.classList.toggle("dark-theme");
-      var theme = document.body.classList.contains("dark-theme")
-        ? "dark"
-        : "light";
-      toggleIconFn(theme);
+  // Add shadow to nav bar on scroll
+  window.addEventListener('scroll',(e)=>{
+    const nav = document.querySelector('nav');
+    if(window.pageYOffset>5){
+      nav.classList.add("nav-shadow");
+    }else {
+      nav.classList.remove("nav-shadow");
     }
-    localStorage.setItem("theme", theme);
   });
-  const toggleIconFn = (theme) => {
-    if (theme === "dark") {
-      toggleIcon.src = "/img/nav/sun.svg";
-    } else {
-      toggleIcon.src = "/img/nav/moon.svg";
-    }
-  };
 
 }());
 //# sourceMappingURL=min.js.map

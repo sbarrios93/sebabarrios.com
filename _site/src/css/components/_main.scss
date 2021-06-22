@@ -15,27 +15,6 @@
   margin-left: 0 !important;
 }
 
-// scroll bar
-::-webkit-scrollbar {
-  height: 10px;
-  width: 10px;
-}
-::-webkit-scrollbar-thumb {
-  // background: #3e466b;
-  background: #4f5c98;
-  border-radius: 6px;
-  &:hover {
-    background: #aaa;
-    cursor: pointer;
-  }
-}
-::-webkit-scrollbar-track {
-  background: #363948;
-}
-::-webkit-scrollbar-corner {
-  background: $color-background;
-}
-
 /*! purgecss end ignore */
 
 share-widget {
