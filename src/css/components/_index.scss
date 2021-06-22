@@ -43,7 +43,7 @@
       }
       .toc-active > a {
         font-weight: normal;
-        color: var(--font-a)!important;
+        color: var(--font-a) !important;
       }
     }
 
@@ -135,13 +135,40 @@
 .page-index {
   header {
     .header-container {
+      width: 100%;
+      @media (min-width: $grid-xxl){
+        width: $grid-xxl;
+      }
+      padding-right: 0;
+      padding-top: 9rem; 
+      padding-right: 1rem;
+      align-items: unset;
+      text-align: unset;
+
+
+      h1 {
+        font-size: calc(1.875rem + 1.5vw);
+        font-weight: 800;
+      }
+
+      h2 {
+        font-size: calc(1.3rem + 1.5vw);
+        font-weight: 700;
+        margin-top: 0.1rem;
+      }
+      p {
+        max-width: 70rem;
+        font-size: 1.1rem;
+        line-height: 1.7rem;
+        text-justify: distribute-all-lines;
+      }
+
       p.intro {
         margin-top: 0;
       }
     }
     .header-logo {
-      height: 80px;
-      width: auto;
+      display: none;
     }
   }
 }

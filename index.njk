@@ -2,16 +2,14 @@
 title: "👋 Hello there!"
 layout: page
 customClass: "page-index"
-icon: '/img/avatar.svg'
 date: Last Modified
 ---
-
 <header class="pt-0 ">
-  <div class="header-container pt-0">
-
-{% markdown %}
-I'm a Vietnamese guy who has a curious mind. I'd like to learn something new every day. I'm a PhD in Applied Maths and currently a __Data Scientist__. You find in this site my notes which are taken when I've found something new in __Data Science__ and __Web Developement__.{:.intro}
-{% endmarkdown %}
+  <div class="header-container pt-0 wide">
+<h2>I'm Sebastián Barrios</h2>
+<p>I was born in Chile; currently living in Chicago where I'm an MBA Candidate.</p2>
+</br> 
+<p>Even though I have a finance background, my passion has always been technology, and thus it was only natural for me to get interested in Data Science and Machine Learning. As an incurable autodidact, the internet has been my go-to when I want to learn something new, so I believe it is time for me to give back share what I've learned throughout these years. As such, this place is where I store my thoughts and notes on different areas I'm interested in and also on some side projects.</p>
 
     <div class="social">
       {% for item in social %}
@@ -20,11 +18,6 @@ I'm a Vietnamese guy who has a curious mind. I'd like to learn something new eve
         </a>
       {% endfor %}
     </div>
-    {% if metadata.look4job %}
-      <div class="job mb-1p5">
-        <span>Available for a full-time job!</span>
-      </div>
-    {% endif %}
     <p class="contact mt-0p5">
       <a class="button blue no-effect" href="mailto:dinhanhthi@gmail.com">
         {% if metadata.look4job %}Hire me{% else %}Contact{% endif %}
@@ -36,6 +29,7 @@ I'm a Vietnamese guy who has a curious mind. I'd like to learn something new eve
     </p>
 
   </div>
+    
 </header>
 
 <div class="container wide d-flex d-flex-wrap">
