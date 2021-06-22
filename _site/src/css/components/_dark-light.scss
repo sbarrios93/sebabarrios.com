@@ -1,0 +1,13 @@
+/*! purgecss start ignore */
+
+// Default colors
+body {
+	@include light-vars();
+}
+// dark
+body.dark-theme {
+	@include dark-vars();
+}
+
+
+/*! purgecss end ignore */
