@@ -23,10 +23,10 @@ $color-faded-invert-light: $color-faded;
 
 
 // FONTS
-$font-main: "Inter", Arial, Helvetica, sans-serif;
-$font-main-var: "Inter", Arial, Helvetica, sans-serif;
-$font-heading: "Inter", Arial, Helvetica, sans-serif;
-$font-code: "Fira Code", Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+$font-main: "Inter var", "Inter", Arial, Helvetica, sans-serif;
+$font-main-var: "Inter var","Inter", Arial, Helvetica, sans-serif;
+$font-heading: "Inter var","Inter", Arial, Helvetica, sans-serif;
+$font-code: "Fira Code","Inter", Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
 $font-size: 15px;
 $font-color: #28293D;
 $font-color-light: #222;
@@ -45,7 +45,7 @@ $grid-sm: 576px;
 $grid-md: 768px;
 $grid-lg: 992px;
 $grid-xl: 1200px;
-$grid-xxl: 1600px;
+$grid-xxl: 1500px;
 $grid-w-normal: 900px;
 $grid-w-ex-normal: 1000px;
 $grid-toc: 1300px;
