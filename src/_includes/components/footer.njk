@@ -1,4 +1,11 @@
 <footer>
+<div class="social">
+      {% for item in social %}
+        <a class="no-effect" title="{{ item.name }}" href="{{ item.url }}">
+          <img class="keep-original" src="{{ item.icon }}" alt="{{ item.name }}" height="20" width="20">
+        </a>
+      {% endfor %}
+    </div>
   <a href="{{ '/' | url }}" target="_blank">Sebastián Barrios
     &nbsp;&copy;&nbsp;
     {{ helpers.currentYear() }}
@@ -11,7 +18,6 @@
   <a href="/about/">
     About me
   </a>
-  &nbsp;&bull;&nbsp;
 </footer>
 
 {# elasticlunr #}
