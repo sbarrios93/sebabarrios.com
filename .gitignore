@@ -17,5 +17,4 @@ Gemfile.lock
 .idea
 .fontello-session
 sebabarrios.com.code-workspace
-copy_files.sh
 _site-branch/
