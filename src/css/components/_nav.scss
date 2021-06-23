@@ -69,6 +69,10 @@ nav {
       }
       @media (min-width: $grid-sm) {
         margin-right: 15px;
+
+        img {
+          display:none;
+        }
       }
     }
 
