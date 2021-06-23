@@ -39,7 +39,7 @@ permalink: "{{ page.fileSlug }}/"
 
 {% block article %}
   <article class="post-container">
-    <div class="container normal mt-2 page-note">
+    <div class="normal mt-2 page-note mx-auto">
       {% if toc %}
         {{ content | toc | safe }}
         {{ content | safe }}

@@ -2,19 +2,19 @@
   <div id="nav">
     <a class="nav-item no-effect" href="{{ '/' | url }}">
       <img class="keep-original" src="/img/nav/home.svg" alt="home" height="18" width="18">
-      <span class="text-2xl font-sans font-bold text-yellow-500">Sebastián Barrios</span>
+      <span class="text-xl font-sans font-bold text-yellow-500">Sebastián Barrios</span>
     </a>
     <div id="nav-search" class="nav-search">
       <form>
         <input id="nav-search__input"
-							 class="nav-search__input bg-gray-50"
+							 class="nav-search__input bg-gray-50 text-gray-500 placeholder-gray-500 placeholder-opacity-50 "
 							 type="search"
 							 onfocusin="inFocus(this)"
 							 placeholder='search notes (press "/" to focus &#38; "ESC" to close)'
 							 aria-label='search notes (press "/" to focus &#38; "ESC" to close)'
                autocomplete="off">
       </form>
-      <div id="nav-search__result-container" style="display: none;">
+      <div id="nav-search__result-container" class="bg-gray-50" style="display: none;">
         <ul id="nav-search__ul"></ul>
         <div id="nav-search__no-result" style="display: none;">
           <p>No results found.</p>
@@ -29,5 +29,4 @@
 
 </div>
 </nav>
-
 <script async defer src="{{ "/src/js/search.js" | addHash }}"></script>
