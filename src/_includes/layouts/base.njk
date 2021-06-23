@@ -8,7 +8,7 @@
 
   {% include "components/head.njk" %}
 
-  <body{% if customClass %} class="{{ customClass }}"{% endif %}>
+  <body class="bg-gray-50 {% if customClass %}{{ customClass }}{% endif %}">
 
     <script>
       function showContent() {
@@ -23,7 +23,7 @@
     {% set pageUrlLength = page.url | length %}
     <header>
       {% include "components/navigation.njk" %}
-      <div class="header-container">
+      <div class="{% if (customClass) %}{% if (customClass == 'page-index') %}header-index mx-auto container pt-28{% else %} header-container{% endif %}{% else %}header-container{% endif %}">
         {% block headerLogo %}{% endblock %}
         {% block headerTitle %}
           <h1>{{ title }}

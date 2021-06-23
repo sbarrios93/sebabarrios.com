@@ -116,13 +116,11 @@ $badge-green-light: $color-green-light;
 $badge-blue: #2f55c1;
 $badge-blue-light: $badge-blue;
 
-
 @import "./components/mixin"; // mixsin
 @import "./components/dark-light"; // dark / light mode
 @import "./components/font";
 @import "./components/main"; // init css
 @import "./components/heading";
-@import "./components/grid";
 @import "./components/index"; // for home page
 @import "./components/header";
 @import "./components/nav";
