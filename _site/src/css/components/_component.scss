@@ -60,10 +60,10 @@
   text-transform: capitalize;
   outline: none !important;
   border-radius: 0px;
-  min-width: 140px;
+  // min-width: 40px;
   position: relative;
   overflow: hidden;
-  border-radius: 40px;
+  border-radius: 0.3rem;
 	text-transform: uppercase;
 	display: inline-table;
   &.blue {

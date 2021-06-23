@@ -10,7 +10,7 @@
     
   
   <url>
-    <loc>https://dinhanhthi.com/dataset-collection/</loc>
+    <loc>https://sebabarrios.com/dataset-collection/</loc>
     <lastmod>2021-06-21T22:02:16.000Z</lastmod>
   </url>
   
@@ -23,7 +23,7 @@
     
   
   <url>
-    <loc>https://dinhanhthi.com/data-aggregation/</loc>
+    <loc>https://sebabarrios.com/data-aggregation/</loc>
     <lastmod>2021-06-20T20:08:44.000Z</lastmod>
   </url>
   
@@ -36,7 +36,7 @@
   
   
   <url>
-    <loc>https://dinhanhthi.com/about-the-notes/</loc>
+    <loc>https://sebabarrios.com/about-the-notes/</loc>
     <lastmod>2021-06-22T03:41:29.906Z</lastmod>
   </url>
   
@@ -49,7 +49,7 @@
   
   
   <url>
-    <loc>https://dinhanhthi.com/about/</loc>
+    <loc>https://sebabarrios.com/pages/search-index.json</loc>
     <lastmod>2021-06-22T03:41:29.906Z</lastmod>
   </url>
   
@@ -62,33 +62,7 @@
   
   
   <url>
-    <loc>https://dinhanhthi.com/donate/</loc>
-    <lastmod>2021-06-22T03:41:29.906Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://dinhanhthi.com/pages/search-index.json</loc>
-    <lastmod>2021-06-22T03:41:29.906Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://dinhanhthi.com/tags/</loc>
+    <loc>https://sebabarrios.com/tags/</loc>
     <lastmod>2021-06-22T03:41:29.907Z</lastmod>
   </url>
   
@@ -101,7 +75,7 @@
   
   
   <url>
-    <loc>https://dinhanhthi.com/tags/data-science/</loc>
+    <loc>https://sebabarrios.com/tags/data-science/</loc>
     <lastmod>2021-06-22T03:41:29.907Z</lastmod>
   </url>
   
@@ -114,7 +88,7 @@
   
   
   <url>
-    <loc>https://dinhanhthi.com/tags/deep-learning/</loc>
+    <loc>https://sebabarrios.com/tags/deep-learning/</loc>
     <lastmod>2021-06-22T03:41:29.907Z</lastmod>
   </url>
   
@@ -126,10 +100,8 @@
     
   
   
-    
-  
   <url>
-    <loc>https://dinhanhthi.com/</loc>
-    <lastmod>2021-06-22T23:41:01.000Z</lastmod>
+    <loc>https://sebabarrios.com/</loc>
+    <lastmod>2021-06-23T04:11:01.015Z</lastmod>
   </url>
 </urlset>
