@@ -21,7 +21,7 @@
     </script>
 
     {% set pageUrlLength = page.url | length %}
-    <header{% if pageUrlLength > 1 and page.url !== '/about/' %} class="wave-border wave-border-post"{% endif %}>
+    <header>
       {% include "components/navigation.njk" %}
       <div class="header-container">
         {% block headerLogo %}{% endblock %}

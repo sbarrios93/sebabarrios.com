@@ -1,24 +1,24 @@
 {
-  "title": "🔥 Anh-Thi DINH",
-  "url": "https://dinhanhthi.com",
+  "title": "Sebastián Barrios",
+  "url": "https://sebabarrios.com",
   "domain": ".com",
-  "description": "I failed my way to success!",
+  "description": "",
   "genre": "Insert a schema.org genre",
   "googleAnalyticsId": "GA ID. Update me",
   "feed": {
-    "subtitle": "I failed my way to success!",
+    "subtitle": "",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "id": "https://dinhanhthi.com"
+    "id": "https://sebabarrios.com"
   },
   "jsonfeed": {
     "path": "/feed/feed.json",
-    "url": "https://dinhanhthi.com/feed/feed.json"
+    "url": "https://sebabarrios.com/feed/feed.json"
   },
   "author": {
-    "name": "Anh-Thi DINH",
-    "twitterHandle": "dinhanhthi",
-    "url": "https://dinhanhthi.com"
+    "name": "Sebastián Barrios",
+    "twitterHandle": "itsmeseba",
+    "url": "https://sebabarrios.com"
   },
   "publisher": {
     "name": "Publisher name. Update me."
