@@ -24,13 +24,14 @@ h4 {
   font-size: $heading-h4-size;
 }
 
-@if $heading-numbering {
-  body {
-    counter-reset: h2counter;
-  }
-}
+
 
 .page-note {
+
+  @if $heading-numbering {
+      counter-reset: h2counter;
+  }
+
   & > h2,
   h3,
   h4 {
