@@ -138,15 +138,6 @@ mark {
 }
 
 a {
-  color: var(--font-a);
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: none;
-    border-bottom: 3px solid var(--font-a);
-    color: var(--a-hover);
-  }
-
   &.no-effect {
     &:hover {
       border-bottom: none;

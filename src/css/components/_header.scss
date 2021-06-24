@@ -81,6 +81,10 @@ header {
   }
 }
 
+#tag-footer #note-tag > a::before {
+        content: "#";
+}
+
 // FIXME 
 #reading-progress {
   z-index: 3;

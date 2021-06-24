@@ -21,17 +21,8 @@ permalink: "{{ page.fileSlug }}/"
 {% block extraArticleHeader %}
   {% if tags %}
     <div id="more-info">
-      <div id="note-tag">
-        {% for tag in tags %}
-          {% if tag != "posts" %}
-            <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
-          {% endif %}
-        {% endfor %}
-      </div>
       <div id="last-modified">
 				{{ page.inputPath | lastModifiedDate  | htmlDateString }}
-				/
-				<a href="https://github.com/dinhanhthi/dinhanhthi.com/edit/dev/{{ page.inputPath }}">Edit on Github</a>
 			</div>
     </div>
   {% endif %}
@@ -51,7 +42,21 @@ permalink: "{{ page.fileSlug }}/"
           <sup style="color: #bbb">•</sup>This is a draft note.
         </p>
       {% endif %}
+      
+        {% if tags %}
+    <div id="tag-footer">
+      <div id="note-tag">
+        {% for tag in tags %}
+          {% if tag != "posts" %}
+            <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
+  {% endif %}
+    </div>
+
+
 
     <script type="application/ld+json">
       {

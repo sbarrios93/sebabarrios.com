@@ -2,10 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Links */
+a {
+    @apply text-purple-500;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    border-bottom: 3px;
+    @apply border-purple-700 text-purple-700;
+}
+/* Nav */
 #nav li.selected {
     @apply bg-gray-200;
 }
 
+#nav a {
+    @apply text-gray-600 text-base border-b-0 hover:text-gray-800;
+}
+
+/* Tag Links
 a.post-tag {
     @apply hover:text-blue-800 font-medium
+} */
+
+/* Post Title H1 */
+header > .header-container > h1 {
+    @apply font-semibold;
+}
+
+/* Post Tag Footer */
+#tag-footer {
+    @apply py-4;
+}
+
+#tag-footer #note-tag {
+    @apply pt-3 border-t border-gray-300;
+}
+
+#tag-footer #note-tag > a {
+    @apply text-blue-300 hover:text-blue-400 mr-3 divide-x hover:border-yellow-400;
 }

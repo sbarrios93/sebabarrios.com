@@ -13,9 +13,9 @@ keywords: "dataframe groupby group agg apply pivot table melt tables lambda grou
 
 Pattern recognition relates to discover regularities in data in an automatic way by using computer algorithms. Using the regularities that it finds, it seeks to take actions such as classifying the data into different categories.
 
-Using the MNIST dataset as an example; we will represent the *target vector* $\mathbf{t}$, which will represent the identity of each digit. **Keep in mind that there will be one target vector $\mathbf{t}$ per digit image $\mathbf{x}$**. 
+Using the MNIST dataset as an example; we will represent the *target vector* \(\mathbf{t}\), which will represent the identity of each digit. **Keep in mind that there will be one target vector \(\mathbf{t}\) per digit image \(\mathbf{x}\)**. 
 
-The machine learning algorithm will output a result represented by $\mathbf{y(x)}$, and the precise form of $\mathbf{y(x)}$ will be determined during training. Once the model is trained, the model can determine the identity of new digit images. The ability to categorize correctly new examples is known as **generalization**.
+The machine learning algorithm will output a result represented by \(\mathbf{y(x)}\), and the precise form of \(\mathbf{y(x)}\) will be determined during training. Once the model is trained, the model can determine the identity of new digit images. The ability to categorize correctly new examples is known as **generalization**.
 
 The raw input variables are typically pre-processed to transform them into something that is easier to use to train and test the algorithm. This is called **feature extracion**. Pre-processing must be careful so that non of the important information is discarded.
 
@@ -36,9 +36,9 @@ Learning algorithms in reinforcement learning are concerned with finding the act
 
 There's an inherent tradeoff in this learning process, as the algorithm must learn to balance its *exploration* phase (experimenting with new actions to see how favorable they are) with its *exploitation* phase, in which the system makes use of actions known to give high rewards.
 
-## 1.1 Polynomial Curve Fitting
+## Polynomial Curve Fitting
 
-Say we have \( N \) observations of \(x\), where $\mathbf{x} = \begin{smallmatrix} x_1 \\ x_2 \\ \ldots \\ x_n\end{smallmatrix}$ and $\mathbf{t} = \begin{smallmatrix} t_1 \\ t_2 \\ \ldots \\ t_n\end{smallmatrix}$,where the function used to obtain the data is $y(x) = 2 \cdot \pi \cdot x$ 
+Say we have \( N \) observations of \(x\), where \(\mathbf{x} = \begin{smallmatrix} x_1 \\ x_2 \\ \ldots \\ x_n\end{smallmatrix}\) and \(\mathbf{t} = \begin{smallmatrix} t_1 \\ t_2 \\ \ldots \\ t_n\end{smallmatrix}\) , where the function used to obtain the data is \(y(x) = 2 \cdot \pi \cdot x\) 
 
 ![Plot]({{img-url}}/plot_c0_1-2.svg){:.img-80}
 

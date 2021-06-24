@@ -225,7 +225,7 @@ module.exports = function (eleventyConfig) {
     // .use(require("markdown-it-table-of-contents")) // [[toc]] (no spaces)
     .use(tm, {
       engine: require("katex"),
-      delimiters: "dollars",
+      delimiters: "brackets",
       katexOptions: { macros: { "\\RR": "\\mathbb{R}" } },
     })
     .use(require("markdown-it-task-lists")) // tasks [x]
