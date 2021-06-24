@@ -858,20 +858,9 @@ nav #nav .nav-item {
     padding-left: 0 !important;
   }
 }
-@media (max-width: 575px) {
-  nav #nav .nav-item {
-    width: unset !important;
-  }
-  nav #nav .nav-item span {
-    display: none;
-  }
-}
 @media (min-width: 576px) {
   nav #nav .nav-item {
     margin-right: 15px;
-  }
-  nav #nav .nav-item img {
-    display: none;
   }
 }
 nav #nav .nav-dark-light {
@@ -893,6 +882,9 @@ nav #nav .nav-github {
 }
 nav #nav .nav-github:hover img {
   filter: invert(0.4);
+}
+nav #nav .nav-github img {
+  filter: invert(0.8);
 }
 nav #nav .nav-search {
   display: block;
