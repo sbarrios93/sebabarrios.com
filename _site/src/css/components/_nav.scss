@@ -6,7 +6,6 @@ nav {
   left: 0;
   width: 100vw;
   padding: 0 1.5rem;
-  background: var(--color-bg-nav);
   transition: ease .5s;
   -webkit-transition: ease .5s;
 
@@ -100,7 +99,6 @@ nav {
 
     .nav-search {
       display: block;
-      background: var(--color-bg-nav);
       width: 100%;
       position: relative;
       form {
@@ -108,8 +106,6 @@ nav {
       }
       .nav-search__input {
         border: 0;
-        background: var(--color-bg-nav);
-        color: #ddd;
         font-size: 1.05rem;
         padding: 0.65rem 0.5rem;
         width: 100%;
@@ -124,11 +120,9 @@ nav {
         max-height: 80vh;
         overflow: auto;
         width: 100%;
-        background: var(--color-bg-nav);
         border-bottom-right-radius: 5px;
         border-bottom-left-radius: 5px;
         padding: 0;
-        filter: drop-shadow(2px 4px 6px black);
 
         @media (max-width: $grid-md - 1px) {
           position: fixed;
@@ -163,7 +157,6 @@ nav {
                 overflow: hidden;
                 text-overflow: ellipsis;
                 a {
-                  color: #efb232;
                   white-space: inherit;
                   padding: 0;
                   text-align: left;
@@ -196,7 +189,6 @@ nav {
               display: none;
             }
             &.selected {
-              background: $color-background;
               .enter {
                 display: block;
               }

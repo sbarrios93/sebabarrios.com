@@ -1,8 +1,5 @@
 /*! purgecss start ignore */
 .page-index {
-  .container {
-    padding: 2rem 1rem 0 1rem;
-  }
 
   .main-cats {
     flex: 1;
@@ -134,13 +131,9 @@
 
 .page-index {
   header {
-    .header-container {
-      width: 100%;
-      @media (min-width: $grid-xxl){
-        width: $grid-xxl;
-      }
+    .header-index {
+
       padding-right: 0;
-      padding-top: 9rem; 
       padding-right: 1rem;
       align-items: unset;
       text-align: unset;
