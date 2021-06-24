@@ -641,6 +641,11 @@ h4 {
   font-size: calc(1.875rem + 1.5vw);
   font-weight: 800;
 }
+@media (max-width: 767px) {
+  .page-index header .header-index h1 {
+    padding-left: 0.5rem;
+  }
+}
 .page-index header .header-index h2 {
   font-size: calc(1.3rem + 1.5vw);
   font-weight: 700;
