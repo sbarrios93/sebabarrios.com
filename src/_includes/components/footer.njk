@@ -1,19 +1,19 @@
 <footer>
-<div class="container mx-auto py-3 mb-4 leading-normal bg-purple-100 rounded bg-opacity-60 mt-8 flex" role="alert">
-<div class="w-full px-4 text-center text-gray-500">This website is based on the design made by <a class="text-purple-500 hover:text-purple-700" href="https://github.com/dinhanhthi">Anh-Thi DINH</a> for his <a class="text-purple-500 hover:text-purple-700" href="https://dinhanhthi.com">awesome website</a>.</div>
-</div>   
+  <div class="container mx-auto py-3 mb-4 leading-normal bg-purple-100 rounded bg-opacity-60 mt-8 flex" role="alert">
+    <div class="w-full px-4 text-center text-gray-500">This website is based on the design made by <a class="text-purple-500 hover:text-purple-700" href="https://github.com/dinhanhthi" target="_blank">Anh-Thi DINH</a> for his <a class="text-purple-500 hover:text-purple-700" href="https://dinhanhthi.com" target="_blank">awesome website</a>.</div>
   </div>
+</div>
 <div class="social">
-      {% for item in social %}
-        <a class="no-effect" title="{{ item.name }}" href="{{ item.url }}">
-          <img class="keep-original" src="{{ item.icon }}" alt="{{ item.name }}" height="20" width="20">
-        </a>
-      {% endfor %}
-    </div>
-  <a href="{{ '/' | url }}" target="_blank">Sebastián Barrios
+  {% for item in social %}
+    <a class="no-effect" title="{{ item.name }}" href="{{ item.url }}">
+      <img class="keep-original" src="{{ item.icon }}" alt="{{ item.name }}" height="20" width="20">
+    </a>
+  {% endfor %}
+</div>
+<a href="{{ '/' | url }}" target="_blank">Sebastián Barrios
     &nbsp;&copy;&nbsp;
     {{ helpers.currentYear() }}
-  </a>
+</a>
   &nbsp;&bull;&nbsp;
   <a href="/about-the-notes/">
     About the notes
@@ -26,7 +26,6 @@
 
 {# elasticlunr #}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
-
 
 {% if env.environment != "local" %}
 {# TODO: Add GA link #}
