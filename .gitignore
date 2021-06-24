@@ -5,6 +5,7 @@ package-lock.json
 _site/
 _live/
 node_modules/
+node_modules.nosync/
 .DS_Store
 src/js/min.js
 src/js/min.js.map
@@ -18,3 +19,5 @@ Gemfile.lock
 .fontello-session
 sebabarrios.com.code-workspace
 _site-branch/
+node_modules.nosync/*
+node_modules

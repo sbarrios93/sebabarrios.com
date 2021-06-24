@@ -5,3 +5,7 @@
 #nav li.selected {
     @apply bg-gray-200;
 }
+
+a.post-tag {
+    @apply hover:text-blue-800 font-medium
+}
