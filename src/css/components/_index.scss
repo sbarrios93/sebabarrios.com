@@ -142,6 +142,9 @@
       h1 {
         font-size: calc(1.875rem + 1.5vw);
         font-weight: 800;
+        @media (max-width:$grid-md - 1px) {
+          padding-left: 0.5rem;
+        }
       }
 
       h2 {
