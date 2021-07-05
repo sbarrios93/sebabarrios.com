@@ -6,32 +6,6 @@
   
   
   
-  
-    
-  
-  <url>
-    <loc>https://sebabarrios.com/dataset-collection/</loc>
-    <lastmod>2021-06-21T22:02:16.000Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <url>
-    <loc>https://sebabarrios.com/data-aggregation/</loc>
-    <lastmod>2021-06-20T20:08:44.000Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
     
   
   
@@ -101,6 +75,19 @@
   
   
   <url>
+    <loc>https://sebabarrios.com/tags/machine-learning/</loc>
+    <lastmod>2021-06-22T03:41:29.907Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <url>
     <loc>https://sebabarrios.com/tags/pattern-recognition-and-machine-learning/</loc>
     <lastmod>2021-06-22T03:41:29.907Z</lastmod>
   </url>
@@ -113,11 +100,9 @@
     
   
   
-    
-  
   <url>
-    <loc>https://sebabarrios.com/1-introduction/</loc>
-    <lastmod>2021-06-24T19:14:26.000Z</lastmod>
+    <loc>https://sebabarrios.com/tags/git/</loc>
+    <lastmod>2021-06-22T03:41:29.907Z</lastmod>
   </url>
   
   
@@ -128,10 +113,138 @@
     
   
   
+  <url>
+    <loc>https://sebabarrios.com/tags/hands-on-machine-learning/</loc>
+    <lastmod>2021-06-22T03:41:29.907Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
     
+  
+  
+  <url>
+    <loc>https://sebabarrios.com/data-aggregation/</loc>
+    <lastmod>2021-06-22T03:41:29.907Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <url>
+    <loc>https://sebabarrios.com/prml-chapter-1/</loc>
+    <lastmod>2021-06-24T02:55:58.684Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <url>
+    <loc>https://sebabarrios.com/dataset-collection/</loc>
+    <lastmod>2021-06-27T00:00:00.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
   
   <url>
     <loc>https://sebabarrios.com/</loc>
-    <lastmod>2021-06-24T20:07:33.000Z</lastmod>
+    <lastmod>2021-07-01T22:12:46.851Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <url>
+    <loc>https://sebabarrios.com/git-notes/</loc>
+    <lastmod>2021-07-05T00:00:00.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <url>
+    <loc>https://sebabarrios.com/homl---chapter-4/</loc>
+    <lastmod>2021-07-05T00:00:00.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <url>
+    <loc>https://sebabarrios.com/lasso-regression/</loc>
+    <lastmod>2021-07-05T00:00:00.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <url>
+    <loc>https://sebabarrios.com/prml---chapter-1/</loc>
+    <lastmod>2021-07-05T00:00:00.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <url>
+    <loc>https://sebabarrios.com/ridge-regression-v-lasso-regression/</loc>
+    <lastmod>2021-07-05T00:00:00.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <url>
+    <loc>https://sebabarrios.com/ridge-regression/</loc>
+    <lastmod>2021-07-05T00:00:00.000Z</lastmod>
   </url>
 </urlset>
