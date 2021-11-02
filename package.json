@@ -68,6 +68,7 @@
     "katex": "latest",
     "lru-cache": "latest",
     "markdown-it": "latest",
+    "markdown-it-anchor": "^8.4.1",
     "markdown-it-attrs": "latest",
     "markdown-it-container": "^3.0.0",
     "markdown-it-emoji": "latest",
