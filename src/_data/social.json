@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Github",
+    "icon": "/img/social/github.svg",
+    "url": "https://github.com/sbarrios93"
+  },
+  {
+    "name": "LinkedIn",
+    "icon": "/img/social/linkedin.svg",
+    "url": "https://www.linkedin.com/in/sebastianbs/"
+  },
+  {
+    "name": "Twitter",
+    "icon": "/img/social/twitter.svg",
+    "url": "https://twitter.com/itsmeseba"
+  }
+]

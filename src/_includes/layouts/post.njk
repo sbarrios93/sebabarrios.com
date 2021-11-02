@@ -1,0 +1,77 @@
+---
+#layout: layouts/base.njk
+permalink: "{{ page.fileSlug }}/"
+---
+{% extends "layouts/base.njk" %}
+
+{% block headerLogo%}
+  <div class="header-logo">
+    {% if icon %}
+      {% if "/" in icon %}
+        <img class="keep-original" alt="{{ title }}" src="{{ icon }}">
+      {% else %}
+        <img class="keep-original" alt="{{ title }}" src="/img/header/{{ icon }}">
+      {% endif %}
+    {% else %}
+      <img class="keep-original" alt="{{ title }}" src="/img/nav/about.svg">
+    {% endif %}
+  </div>
+{% endblock %}
+
+{% block extraArticleHeader %}
+  {% if tags %}
+    <div id="more-info">
+      <div id="last-modified">
+				{{ page.inputPath | lastModifiedDate  | htmlDateString }}
+			</div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block article %}
+  <article class="post-container">
+    <div class="normal mt-2 page-note mx-auto">
+      {% if toc %}
+        {{ content | toc | safe }}
+        {{ content | safe }}
+      {% else %}
+        {{ content | safe }}
+      {% endif %}
+      {% if notfull %}
+        <p class="note-type-indicator">
+          <sup style="color: #bbb">•</sup>This is a draft note.
+        </p>
+      {% endif %}
+      
+        {% if tags %}
+    <div id="tag-footer">
+      <div id="note-tag">
+        {% for tag in tags %}
+          {% if tag != "posts" %}
+            <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+    </div>
+
+
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{ title }}",
+        "image": [],
+        "author": "{{ metadata.author.name }}",
+        "genre": "{{ metadata.genre }}",
+        "url": "{{ metadata.url }}{{ canonicalUrl or page.url }}",
+        "mainEntityOfPage": "{{ metadata.url }}{{ canonicalUrl or page.url }}",
+        "datePublished": "{{ page.date | htmlDateString }}",
+        "dateModified": "{{ page.inputPath | lastModifiedDate  | htmlDateString }}",
+        "description": "{% if description %}{{ description }}{% else %}{{ content | striptags | truncate(140) }}{% endif %}"
+      }
+    </script>
+  </article>
+{% endblock %}

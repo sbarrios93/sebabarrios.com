@@ -1,0 +1,15 @@
+[
+	{
+		"name": "Data Science",
+		"color": "#b5ffb5",
+		"svg": "/img/cats/data-science.svg",
+    "fontello": "icon-data"
+	},
+	{
+		"name": "Pattern Recognition and Machine Learning",
+		"color": "#b5ffb5",
+		"svg": "/img/cats/data-science.svg",
+    "fontello": "icon-data"
+	}
+
+]

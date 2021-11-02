@@ -1,0 +1,106 @@
+---
+title: "👋 Hello there!"
+layout: page
+customClass: "page-index"
+date: Last Modified
+---
+<header class="pt-4">
+  <div class="header-index pt-0 container px-4 mx-auto">
+<h2 class="text-yellow-500">I'm Sebastián Barrios</h2>
+<p>I was born in Chile; currently living in Chicago where I'm an MBA Candidate.</p2>
+</br> 
+<p>Even though I have a finance background, my passion has always been technology, and thus it was only natural for me to get interested in Data Science and Machine Learning. As an incurable autodidact, the internet has been my go-to when I want to learn something new, so I believe it is time for me to give back and share what I've learned throughout these years. As such, this place is where I store my thoughts and notes on different areas I'm interested in and also on some side projects.</p>
+
+<div class="px-4 py-3 leading-normal bg-yellow-100 rounded bg-opacity-60 mt-8 flex" role="alert">
+<div class="flex-shrink">👀</div>
+<div class="w-full px-4"><strong>Note:</strong> this site is still work in progress, so some stuff might not look right.</div>
+</div>
+
+    <p class="contact mt-0p5 ">
+      <a class="no-effect button py-2 px-4 tracking-wide bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white transition ease-in duration-200 text-center text-base font-bold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg " href='&#109;ai&#108;to&#58;&#115;b&#37;61rr&#105;o%&#55;3%39%&#51;3%40gmai%6C&#46;%6&#51;&#37;6F&#109;'>
+
+        Contact
+      </a>
+    </p>
+
+
+</header>
+
+<h3 class="container mx-auto px-4 text-3xl font-bold pb-4">My Notes</h3>
+<div class="container mx-auto flex flex-wrap px-4">
+  <div class="main-cats">
+    {% for item in categories %}
+
+      {# post outside 11ty .md files #}
+      {% set more_post = false %}
+
+      {% set newPostListCat = [] %}
+      {% for post in cat_ex_posts %}
+        {% if not post.hide %}
+          {% for tg in post.tags %}
+            {% if tg == item.name %}
+              {% set more_post = true %}
+              {% set singlePost = {
+                'title': post.title,
+                'url': post.url
+              } %}
+              {% if post.notfull %}
+                {% set singlePost = singlePost | setAttribute('notfull', post.notfull) %}
+              {% endif %}
+              {% if post.private %}
+                {% set singlePost = singlePost | setAttribute('private', post.private) %}
+              {% endif %}
+              {% set newPostListCat = (newPostListCat.push(singlePost), newPostListCat) %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+
+      {% if more_post %}
+        {% set more_post = newPostListCat %}
+      {% endif %}
+
+      {% set postslist = collections[item.name] %}
+      {% set lenlist = postslist | length %}
+      {% if lenlist > 0 %}
+        <div class="category-wrapper">
+          <div class="category">
+            <h2 id="{{ item.name | lower | trim | replace(" ", "-") }}">
+              <i class="{{ item.fontello }} fontello-icon"></i>{{ item.name }}
+            </h2>
+            {% set customClass = 'list-homepage list-of-post' %}
+            {% set customIcon = true %}
+            {% include "postslist.njk" %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="toc-index-container">
+    <div class="toc-index">
+      <h3>Notes by topics</h3>
+      <ul class="toc-js toc-common">
+        {% for item in categories %}
+          {% set postslist = collections[item.name] %}
+          {% set lenlist = postslist | length %}
+          {% if lenlist > 0 %}
+            <li>
+              <i class="{{ item.fontello }} fontello-icon"></i>
+              <a href="#{{ item.name | lower | trim | replace(" ", "-") }}">{{ item.name }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+        <li>
+          <a class="no-color" href="/tags/" style="font-style: italic;">More...</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="appendix-toc">
+      <div><sup>•</sup> Draft notes.</div>
+      <div><sup>†</sup> Private notes.</div>
+      <div><i class="icon-doc-add fontello-icon"></i> Outside this site.</div>
+    </div>
+
+  </div>
+</div>
