@@ -1,48 +1,9 @@
 **This website is based on the [amazing theme](https://github.com/dinhanhthi/dinhanhthi.com) made by [Anh-Thi DINH](https://github.com/dinhanhthi/)**
 
-*** 
-
-# Theme README
-# dinhanhthi.com in 11ty [![Netlify Status](https://api.netlify.com/api/v1/badges/ace14869-1b28-471b-ad0f-5f1f7defa382/deploy-status)](https://app.netlify.com/sites/inspiring-goldstine-cfc130/deploys)
-
-⭐  __Demo__ (current version): https://dinhanhthi.com/ <br />
-🚀  __Performance__: [Google Insight](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fdinhanhthi.com). <br />
-
-⛑  __Dev branch__: [`dev`](https://github.com/dinhanhthi/dinhanhthi.com/tree/dev) (working branch, always up-to-date) <br />
-🌐  __Prod branch__: [`_site`](https://github.com/dinhanhthi/dinhanhthi.com/tree/_site) (already-built html files, what you see on [dinhanhthi.com](https://dinhanhthi.com))
-
-## Older versions
-
-There are several "old" versions (mainly built on **Jekyll**) with different themes.
-
-👉 Version 0 (Jekyll): [v0.dinhanhthi.com](https://v0.dinhanhthi.com) -- [source](https://github.com/dinhanhthi/dinhanhthi.com/tree/v0-jekyll).<br />
-👉 Version 1 (Jekyll): [v1.dinhanhthi.com](https://v1.dinhanhthi.com) -- [source](https://github.com/dinhanhthi/dinhanhthi.com/tree/v1-jekyll).<br />
-👉 Version 2 (Jekyll): [v2.dinhanhthi.com](https://v2.dinhanhthi.com) -- [source](https://github.com/dinhanhthi/dinhanhthi.com/tree/v2-jekyll).<br />
-
-## Illustrated photos (dark vs light)
 
 ![Home page](./src/img/frontpage.png)
 
-![Home page 2](./src/img/front-more.png)
-
-![About page](./src/img/about-page.png)
-
-![About page 2](./src/img/about-more.png)
-
-![Note page](./src/img/note-page.png)
-
-## Features
-
-1. High performance (customized from [Google's high performance theme](https://github.com/google/eleventy-high-performance-blog)).
-2. Flexible on all devices.
-3. Support many components for note taking in markdown (my styles 😉)
-4. A ustomizable resume page.
-5. Optimization images, html, css, javascript files.
-6. Support instant search with hightlight (using [elasticlunr](http://elasticlunr.com/))
-7. **[NEW]** Support Dark / Light Modes with a toggle button.
-8. **[NEW]** Auto scrolling + expanding the TOC. When you scroll to some H2 heading, it will expand all of its H3 children if available. Try [this page](https://dinhanhthi.com/confusion-matrix-and-f1-score/) for an example.
-
-## Build & dev locally
+# Build & dev locally
 
 At the first time after cloning,
 
@@ -117,43 +78,6 @@ fontello-cli --config src/fontello/config.json --css src/fontello/css --font src
    3. Need to convert to svg? Use [this site](https://www.pngtosvg.com/).
 2. Drag and drop this icon to fontello site.
 
-## Working with themes?
-
-``` bash
-# Clone to another folder, let's say "dat.com-theme"
-git checkout _play-with-theme
-
-# Make changes on this folder ONLY FOR THEMES
-
-# Using cherry-pick to update changes from _play-with-theme to dev COMMIT BY COMMIT
-```
-
-## Rules of thumb
-
-1. Change `README.md` only on `dev` branch!!!
-2. Don't change theme in `dev`, just in `_play-with-theme`!
-3. Don't make changes in `pages` and `posts` folders!!
-
 ## Deploy to Netlify?
 
 Check [this note](https://dinhanhthi.com/11ty-nunjucks/#setting-up-with-netlify) to understand below steps.
-
-``` bash
-# Merge changes from branch dev to branch _site
-# Clone this repo to 2 separated folders
-|
-|- dinhanhthi.com	# <- branch "dev" for editing notes
-|- dat.com		# <- branch "_site" for pushing to netlify
-
-# more details
-git clone git@github.com:dinhanhthi/dinhanhthi.com.git # already done in previous section
-git clone git@github.com:dinhanhthi/dinhanhthi.com.git dat.com
-
-# On dat.com/, just run
-# (It takes time to build the whole site in dinhanhthi.com/)
-sh ud_site.sh
-
-# If you wanna make an alias (Linux, MacOS)
-update_dat='cd ~/git/dat.com && sh ud_site.sh && cd -1'
-# change "~/git/dat.com" to yours
-```
