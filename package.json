@@ -75,6 +75,7 @@
     "markdown-it-heading-wrapper": "github:mozilla/markdown-it-heading-wrapper",
     "markdown-it-mark": "latest",
     "markdown-it-table-of-contents": "latest",
+    "markdown-it-task-lists": "^2.1.1",
     "node-sass": "latest",
     "phin": "latest",
     "postcss": "latest",
