@@ -418,5 +418,5 @@
     }
   });
 
-}());
+})();
 //# sourceMappingURL=min.js.map

@@ -9,178 +9,11 @@
     
   
   
-  <url>
-    <loc>https://sebabarrios.com/about-the-notes/</loc>
-    <lastmod>2021-06-22T03:41:29.906Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
     
-  
-  
-  <url>
-    <loc>https://sebabarrios.com/pages/search-index.json</loc>
-    <lastmod>2021-06-22T03:41:29.906Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://sebabarrios.com/tags/</loc>
-    <lastmod>2021-06-22T03:41:29.907Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://sebabarrios.com/tags/data-science/</loc>
-    <lastmod>2021-06-22T03:41:29.907Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://sebabarrios.com/tags/deep-learning/</loc>
-    <lastmod>2021-06-22T03:41:29.907Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://sebabarrios.com/tags/machine-learning/</loc>
-    <lastmod>2021-06-22T03:41:29.907Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://sebabarrios.com/tags/pattern-recognition-and-machine-learning/</loc>
-    <lastmod>2021-06-22T03:41:29.907Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://sebabarrios.com/tags/git/</loc>
-    <lastmod>2021-06-22T03:41:29.907Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://sebabarrios.com/tags/hands-on-machine-learning/</loc>
-    <lastmod>2021-06-22T03:41:29.907Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://sebabarrios.com/data-aggregation/</loc>
-    <lastmod>2021-06-22T03:41:29.907Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://sebabarrios.com/prml-chapter-1/</loc>
-    <lastmod>2021-06-24T02:55:58.684Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://sebabarrios.com/dataset-collection/</loc>
-    <lastmod>2021-06-27T00:00:00.000Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://sebabarrios.com/</loc>
-    <lastmod>2021-07-01T22:12:46.851Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
   
   <url>
     <loc>https://sebabarrios.com/git-notes/</loc>
-    <lastmod>2021-07-05T00:00:00.000Z</lastmod>
+    <lastmod>2021-11-02T21:02:46.000Z</lastmod>
   </url>
   
   
@@ -190,10 +23,12 @@
   
     
   
+  
+    
   
   <url>
     <loc>https://sebabarrios.com/homl---chapter-4/</loc>
-    <lastmod>2021-07-05T00:00:00.000Z</lastmod>
+    <lastmod>2021-11-02T21:02:46.000Z</lastmod>
   </url>
   
   
@@ -203,10 +38,12 @@
   
     
   
+  
+    
   
   <url>
     <loc>https://sebabarrios.com/lasso-regression/</loc>
-    <lastmod>2021-07-05T00:00:00.000Z</lastmod>
+    <lastmod>2021-11-02T21:02:46.000Z</lastmod>
   </url>
   
   
@@ -216,10 +53,27 @@
   
     
   
+  
+    
+  
+  <url>
+    <loc>https://sebabarrios.com/linear-regression/</loc>
+    <lastmod>2021-11-02T21:02:46.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
   
   <url>
     <loc>https://sebabarrios.com/prml---chapter-1/</loc>
-    <lastmod>2021-07-05T00:00:00.000Z</lastmod>
+    <lastmod>2021-11-02T21:02:46.000Z</lastmod>
   </url>
   
   
@@ -229,10 +83,12 @@
   
     
   
+  
+    
   
   <url>
     <loc>https://sebabarrios.com/ridge-regression-v-lasso-regression/</loc>
-    <lastmod>2021-07-05T00:00:00.000Z</lastmod>
+    <lastmod>2021-11-02T21:02:46.000Z</lastmod>
   </url>
   
   
@@ -243,8 +99,205 @@
     
   
   
+    
+  
   <url>
     <loc>https://sebabarrios.com/ridge-regression/</loc>
-    <lastmod>2021-07-05T00:00:00.000Z</lastmod>
+    <lastmod>2021-11-02T21:02:46.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  <url>
+    <loc>https://sebabarrios.com/percy---troubleshooting/</loc>
+    <lastmod>2021-11-02T21:02:46.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  <url>
+    <loc>https://sebabarrios.com/regularization/</loc>
+    <lastmod>2021-11-02T21:02:46.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  <url>
+    <loc>https://sebabarrios.com/shell-scripting/</loc>
+    <lastmod>2021-11-02T21:02:46.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  <url>
+    <loc>https://sebabarrios.com/</loc>
+    <lastmod>2021-11-02T20:54:12.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  <url>
+    <loc>https://sebabarrios.com/about-the-notes/</loc>
+    <lastmod>2021-11-02T20:54:12.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  <url>
+    <loc>https://sebabarrios.com/pages/search-index.json</loc>
+    <lastmod>2021-11-02T20:54:12.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  <url>
+    <loc>https://sebabarrios.com/tags/</loc>
+    <lastmod>2021-11-02T20:54:12.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  <url>
+    <loc>https://sebabarrios.com/tags/git/</loc>
+    <lastmod>2021-11-02T20:54:12.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  <url>
+    <loc>https://sebabarrios.com/tags/hands-on-machine-learning/</loc>
+    <lastmod>2021-11-02T20:54:12.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  <url>
+    <loc>https://sebabarrios.com/tags/machine-learning/</loc>
+    <lastmod>2021-11-02T20:54:12.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  <url>
+    <loc>https://sebabarrios.com/tags/uncategorized/</loc>
+    <lastmod>2021-11-02T20:54:12.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  <url>
+    <loc>https://sebabarrios.com/tags/pattern-recognition-and-machine-learning/</loc>
+    <lastmod>2021-11-02T20:54:12.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  <url>
+    <loc>https://sebabarrios.com/tags/xcs229ii/</loc>
+    <lastmod>2021-11-02T20:54:12.000Z</lastmod>
   </url>
 </urlset>
