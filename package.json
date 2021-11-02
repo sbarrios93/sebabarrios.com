@@ -69,6 +69,7 @@
     "lru-cache": "latest",
     "markdown-it": "latest",
     "markdown-it-attrs": "latest",
+    "markdown-it-container": "^3.0.0",
     "markdown-it-emoji": "latest",
     "markdown-it-heading-wrapper": "github:mozilla/markdown-it-heading-wrapper",
     "markdown-it-mark": "latest",
