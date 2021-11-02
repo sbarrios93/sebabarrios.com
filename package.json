@@ -73,6 +73,7 @@
     "markdown-it-container": "^3.0.0",
     "markdown-it-emoji": "latest",
     "markdown-it-heading-wrapper": "github:mozilla/markdown-it-heading-wrapper",
+    "markdown-it-kbd": "^2.2.2",
     "markdown-it-mark": "latest",
     "markdown-it-table-of-contents": "latest",
     "markdown-it-task-lists": "^2.1.1",
