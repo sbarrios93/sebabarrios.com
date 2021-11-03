@@ -4,12 +4,8 @@ title: Shell Scripting
 tags: ['Uncategorized']
 toc: true
 icon: /img/cats/data-science.svg
-date: Tue Nov 02 2021
-subtitle: 
-author: Sebastian Barrios
-output: pdf_document
-export_: pandoc true
-publish: True
+date: 2021-11-02
+publish: true
 ---
 
 ## Hello World

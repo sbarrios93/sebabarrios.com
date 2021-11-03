@@ -9,15 +9,16 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const elasticlunr = require("elasticlunr");
 const fetch = require("node-fetch");
+const mathjaxPlugin = require("eleventy-plugin-mathjax");
+
 
 // markdown-it
 const markdownIt = require("markdown-it");
 var markdownItp = require("markdown-it")();
 const mdItContainer = require("markdown-it-container");
-const tm = require("./third_party/markdown-it-texmath"); // copied from github:dinhanhthi/markdown-it-texmath
 
-const localImages = require("./third_party/eleventy-plugin-local-images/.eleventy.js");
-const CleanCSS = require("clean-css");
+const localImages = import("./third_party/eleventy-plugin-local-images/.eleventy.js");
+// const CleanCSS = require("clean-css");
 const GA_ID = require("./src/_data/metadata.json").googleAnalyticsId;
 
 const categories = require("./src/_data/categories.json");
@@ -27,8 +28,6 @@ module.exports = {
 };
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
   eleventyConfig.addPlugin(require("eleventy-plugin-nesting-toc"), {
     tags: ["h2", "h3"], // Which heading tags are selected (headings must each have an ID attribute)
@@ -38,6 +37,7 @@ module.exports = function (eleventyConfig) {
     headingTag: "h2", // Heading tag when showing heading above the wrapper element
   });
 
+
   if (process.env.ELEVENTY_ENV == "local") {
     eleventyConfig.addPlugin(require("./src/_11ty/optimize-html.js"), {
       devMode: true,
@@ -46,7 +46,7 @@ module.exports = function (eleventyConfig) {
   } else {
     eleventyConfig.addPlugin(require("./src/_11ty/img-dim.js")); // take too long to build
     eleventyConfig.addPlugin(require("./src/_11ty/json-ld.js"));
-    eleventyConfig.addPlugin(require("./src/_11ty/apply-csp.js"));
+    // eleventyConfig.addPlugin(require("./src/_11ty/apply-csp.js"));
     eleventyConfig.addPlugin(require("./src/_11ty/optimize-html.js"));
     eleventyConfig.setDataDeepMerge(true);
 
@@ -126,7 +126,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
+  return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
       "dd LLL yyyy"
     );
   });
@@ -166,7 +166,6 @@ module.exports = function (eleventyConfig) {
         title: page.title,
         keywords: page.keywords,
         tags: page.tags,
-        cat: page.cat ? categories.find(item => item.name === page.cat).fontello : "icon-tags",
         target: page.target,
         //"content": page.templateContent,
       });
@@ -223,11 +222,6 @@ module.exports = function (eleventyConfig) {
     })
     .use(require("markdown-it-emoji")) // emoji
     // .use(require("markdown-it-table-of-contents")) // [[toc]] (no spaces)
-    .use(tm, {
-      engine: require("katex"),
-      delimiters: "brackets",
-      katexOptions: { macros: { "\\RR": "\\mathbb{R}" } },
-    })
     .use(require("markdown-it-task-lists")) // tasks [x]
     .use(mdItContainer, "success")
     .use(mdItContainer, "info")
@@ -269,6 +263,12 @@ module.exports = function (eleventyConfig) {
       ? markdownLibrary.renderInline(content)
       : markdownLibrary.render(content);
   });
+
+  // eleventyConfig.addPlugin(mathjaxPlugin, {
+  //   startup: {
+  //     document: ''
+  //   }
+  // });
 
   eleventyConfig.addPairedShortcode("hsbox", (content, title) => {
     return (

@@ -30,65 +30,64 @@
 const SELF = quote("self");
 
 const CSP = {
-	regular: serialize([
-		// By default only talk to same-origin
-		["default-src", SELF],
-		// No plugins
-		["object-src", quote("none")],
-		// Script from same-origin and inline-hashes.
-		[
-			"script-src",
-			SELF,
-			quote("unsafe-inline"),
-			"https://cdnjs.cloudflare.com/",
-			"https://gist.github.com/",
-			"https://www.googletagmanager.com/",
-			"https://www.google-analytics.com",
-      "https://cdn.jsdelivr.net" // katex
-		],
-		[
-			"connect-src",
-			SELF,
-			"https://www.google-analytics.com",
-			"https://api.github.com"
-		],
-		// Inline CSS is allowed.
-		[
-			"style-src",
-			SELF,
-			"https://fonts.googleapis.com/",
-			"https://use.fontawesome.com/",
-			quote("unsafe-inline"),
-			"https://github.githubassets.com/", // gist
-			"https://cdn.jsdelivr.net",  // katex
-			"https://rsms.me" // Inter font
-		],
-		// Images may also come from data-URIs.
-		["img-src", SELF, "data:"],
-		[
-			"font-src",
-			SELF,
-			"https://fonts.gstatic.com/",
-			"https://use.fontawesome.com/",
-			"https://cdn.jsdelivr.net", // katex
-			"https://rsms.me" // Inter font
-		],
+  regular: serialize([
+    // By default only talk to same-origin
+    ["default-src", SELF],
+    // No plugins
+    ["object-src", quote("none")],
+    // Script from same-origin and inline-hashes.
+    [
+      "script-src",
+      SELF,
+      quote("unsafe-inline"),
+	  quote("unsafe-eval"),
+      "https://cdnjs.cloudflare.com/",
+      "https://gist.github.com/",
+      "https://www.googletagmanager.com/",
+      "https://www.google-analytics.com",
+      "https://cdn.jsdelivr.net",
+	  "https://cdnjs.cloudflare.com/ajax/libs/mathjax/"
+    ],
+	
+    // Inline CSS is allowed.
+    [
+      "style-src",
+      SELF,
+      "https://fonts.googleapis.com/",
+      "https://use.fontawesome.com/",
+      quote("unsafe-inline"),
+      "https://github.githubassets.com/", // gist
+      "https://cdn.jsdelivr.net", // katex
+      "https://rsms.me", // Inter font
+	  "https://cdnjs.cloudflare.com/ajax/libs/mathjax/"
+    ],
+    // Images may also come from data-URIs.
+    ["img-src", SELF, "data:"],
+    [
+      "font-src",
+      SELF,
+      "https://fonts.gstatic.com/",
+      "https://use.fontawesome.com/",
+      "https://cdn.jsdelivr.net", // katex
+      "https://rsms.me", // Inter font
+	  "https://cdnjs.cloudflare.com/ajax/libs/mathjax/"
+    ],
 
-		// To add new rules, add new array literals here or extend those above with
-		// additional allowed elements.
-		// Example for allowing YouTube iframe embeds
-		// ['frame-src', 'https://www.youtube.com/embed/']
-	]),
+    // To add new rules, add new array literals here or extend those above with
+    // additional allowed elements.
+    // Example for allowing YouTube iframe embeds
+    // ['frame-src', 'https://www.youtube.com/embed/']
+  ]),
 };
 
 // Quotes CSP "keywords" like `none` or `self`. This function does very little
 // but reads better than the inlined contents because of the nested quotes.
 function quote(str) {
-	return `'${str}'`;
+  return `'${str}'`;
 }
 
 function serialize(csp) {
-	return csp.map((src) => src.join(" ")).join(";");
+  return csp.map((src) => src.join(" ")).join(";");
 }
 
 module.exports = () => CSP;

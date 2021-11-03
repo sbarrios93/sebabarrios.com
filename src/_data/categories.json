@@ -10,6 +10,29 @@
 		"color": "#b5ffb5",
 		"svg": "/img/cats/data-science.svg",
     "fontello": "icon-data"
+	},
+	{
+		"name": "Machine Learning",
+		"color": "#b5ffb5",
+		"svg": "/img/cats/data-science.svg",
+		"fontello": "icon-data"
+	},
+	{
+		"name": "Hands On Machine Learning",
+		"color": "#b5ffb5",
+		"svg": "/img/cats/data-science.svg",
+		"fontello": "icon-data"
+	},
+	{
+		"name": "Git",
+		"color": "#b5ffb5",
+		"svg": "/img/cats/data-science.svg",
+		"fontello": "icon-data"
+	},
+	{
+		"name": "Uncategorized",
+		"color": "#b5ffb5",
+		"svg": "/img/cats/data-science.svg",
+		"fontello": "icon-data"
 	}
-
 ]

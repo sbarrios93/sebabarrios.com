@@ -1,7 +1,7 @@
 const fs = require("fs-extra");
 const path = require("path");
 const { JSDOM } = require("jsdom");
-const fetch = require("node-fetch");
+const fetch = import("node-fetch");
 const sh = require("shorthash");
 const fileType = require("file-type");
 const metadata = require("../../src/_data/metadata.json");

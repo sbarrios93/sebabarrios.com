@@ -5,7 +5,7 @@ tags: [Machine Learning]
 toc: true
 icon: /img/cats/data-science.svg
 date: 2021-07-05
-publish: True
+publish: true
 ---
 
 ## Ridge Regression
