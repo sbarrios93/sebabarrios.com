@@ -4,34 +4,54 @@ homepage: true
 layout: layouts/base.njk
 ---
 
-<div class="space-y-16">
-<div class="px-4 pt-0 mx-auto lg:container header-index ">
-<div class="flex flex-col items-center md:flex-row">
-<img src="/images/seba.jpg" alt="Sebastián Barrios" class="mx-auto rounded-full max-w-xxs md:hidden">
-<div class="mr-5 space-y-4 basis-4/5 md:basis-3/5 ">
-    <h1 class="text-4xl font-bold text-sky-800">👋</h1>
-<h2 class="!mt-1 text-3xl font-bold smd:text-4xl text-sky-800">Hey, I am Sebastián Barrios</h2>
-    <p class='text-lg dark:text-blue-50'>I am a grad student living in Chicago, originally from Chile.</p2>
-  </br>
-  <p class="leading-relaxed text-md text-slate-600 dark:text-blue-100">I've always had a passiong for technology, and I'm deeply interested in Machine Learning and AI. This place is where I store my thoughts and notes on different areas I'm interested in and also on some side projects.</p>
+<div class="space-y-8 md:space-y-10 lg:space-y-16">
+  <div class="px-4 pt-0 mx-auto lg:container header-index ">
+    <div class="flex flex-col items-center md:flex-row">
+      <img src="/images/seba.jpg" alt="Sebastián Barrios" class="mx-auto rounded-full max-w-xxs md:hidden"></img>
+      <div class="mr-5 space-y-4 basis-4/5 md:basis-3/5 ">
+        <h1 class="mt-6 text-5xl font-bold tracking-tighter md:mt-0 "><span class='text-5xl'>👋</span> Hello</h1>
+        <h2 class="!mt-1 text-2xl font-bold smd:text-3xl tracking-tight ">I am Sebastián Barrios</h2>
+        <p class='text-md '>I am a grad student living in Chicago, originally from Chile.
+          </p2>
+          </br>
+        <p class="leading-relaxed text-md ">I've always had a passion for technology,
+          and I'm deeply interested in Machine Learning and AI. This place is where I store my thoughts and notes on
+          different areas I'm interested in and also on some side projects.</p>
+      </div>
+      <div class="basis-1/5 md:basis-2/5">
+        <img src="/images/seba.jpg" alt="Sebastián Barrios"
+          class="hidden align-middle shadow-xl rounded-xl md:object-center md:flex md:max-w-full">
+      </div>
+    </div>
 
-</div>
-<div class="basis-1/5 md:basis-2/5">
-<img src="/images/seba.jpg" alt="Sebastián Barrios" class="hidden align-middle rounded-lg md:object-center md:flex md:max-w-full">
-</div>
-</div>
+    <div class="notice-box"
+      role="alert">
+      <div class="items-center px-2 py-1">
+        <p class="hidden mr-1 md:inline-block">👀</p>
+        <p class="inline-block "><strong>Note:</strong> this site is still work in progress, so some stuff
+          might not look right.</p>
+      </div>
+    </div>
 
-  <div class="flex px-4 py-3 mt-8 leading-normal bg-yellow-200 rounded dark:bg-blue-300 bg-opacity-60" role="alert">
-    <div class="flex-shrink">👀</div>
-    <div class="w-full px-4">
-      <strong>Note:</strong> this site is still work in progress, so some stuff might not look right.</div>
   </div>
-  <div>
-    <p class="text-sky-400">This is the project's home page. There is a little styling for demonstration purposes only.</p>
-    <p>The navigation might as well be a sidebar, or a floating menu. This template provides the structure, make it yours ✌️</p>
+  <!-- My Notes Section -->
+  <div class="px-6 mx-auto space-y-8 content-section notes-main lg:container">
+    <div class="min-w-full  items-center border-b-[1px] pb-2 flex justify-between border-b-primary-100 dark:border-b-white/10">
+      <h2 class="inline-block mb-0 font-semibold ">My Notes</h2>
+      <h2 class="block text-3xl font-semibold ">👨‍💻</h2>
+    </div>
+
+    {% set cls = cycler('bg-indigo-300/10 ring-indigo-400/20', 'bg-orange-300/10 ring-orange-400/20', 'bg-blue-300/10 ring-blue-400/20', 'bg-green-300/10 ring-green-400/20', 'bg-purple-300/10 ring-purple-400/20') %}
+    {% for item in categories %}
+    {% set postslist = collections[item.name] %}
+    <div class="{{ cls.next() }} }} py-8 mt-2 rounded-lg ring-gray-800/[.05] ring-1 ring-inset dark:ring-white/10  dark:bg-gradient-to-br dark:from-gray-800 dark:to-sky-900 dark:shadow-lg px-7 notes-content ">
+      <h3 class="pb-4">{{ item.name }}</h3>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 md:gap-6 xl:gap-8">
+        {% include "components/postslist.njk" %}
+      </div>
+    </div>
+      {% endfor %}
+  </div>
+  <!-- End of My Notes Section -->
 </div>
 
-
-  <a href="https://github.com/tomreinert/minimal-11ty-tailwind-starter" class="inline-block px-4 py-2 text-sm text-white uppercase bg-blue-600 rounded hover:bg-blue-700">Download on github</a>
-</div>
-</div>

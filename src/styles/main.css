@@ -1,14 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://rsms.me/inter/inter.css");
 
-
-@import url('https://rsms.me/inter/inter.css');
-html { font-family: 'Inter', sans-serif; }
 @supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', sans-serif; }
+	html {
+		font-family: "Inter var", sans-serif;
+    font-weight: 400
+	}
 }
 
 .hide-from-homepage {
-    display: none;
+	display: none;
+}
+
+.notice-box {
+	@apply p-2 mt-5 mb-8 overflow-hidden rounded-lg dark:shadow-lg  ring-inset ring-1 dark:bg-gray-800 first:mt-0 last:mb-0 dark:ring-white/10
+}
+
+.notice-box[role="alert"] {
+	@apply bg-amber-100/75 ring-amber-200 dark:shadow-lg dark:bg-gray-800 dark:ring-white/10
+}
+
+h1{
+  @apply text-3xl font-bold;
+}
+
+h2 {
+	  @apply text-2xl font-semibold;
+}
+
+h3	{
+	  @apply text-xl font-semibold;
 }
