@@ -1,12 +1,12 @@
-const colors = require('tailwindcss/colors')
-let plugin = require('tailwindcss/plugin')
+let plugin_ = require("tailwindcss/plugin");
 
 module.exports = {
 	content: [
-		"./src/_includes/**/*.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug}",
-		"./src/blog/**/*.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug}",
-		"./src/pages/**/*.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug}",
-		"./src/index.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug}",
+		"./src/**/*.{html,md,js,njk}",
+		"./_site/index.html",
+		"./_site/src/scripts/main.js",
+		"./src/scripts/*.js",
+		"./_site/notes/**/*.html",
 	],
 	darkMode: "class",
 	theme: {
@@ -35,12 +35,13 @@ module.exports = {
 				],
 			},
 		},
-		plugins: [
-			require("@themesberg/flowbite/plugin"),
-			plugin(function ({ addVariant }) {
-				// Add a `third` variant, ie. `third:pb-0`
-				addVariant("second-last", "&:last-nth-child(2)");
-			}),
-		],
 	},
+	plugins: [
+		require("@tailwindcss/typography"),
+		require("@themesberg/flowbite/plugin"),
+		plugin_(function ({ addVariant }) {
+			// Add a `third` variant, ie. `third:pb-0`
+			addVariant("second-last", "&:last-nth-child(2)");
+		}),
+	],
 };

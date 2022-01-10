@@ -7,6 +7,10 @@ module.exports = {
 		path: path.resolve(__dirname, "_site/src/scripts"),
 		filename: "main.js",
 	},
+	externalsType: "script",
+	externals: {
+		"texmath": 'global@https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js'
+	},
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: "../styles/main.css",

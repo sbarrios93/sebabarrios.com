@@ -2,5 +2,13 @@
 layout: base
 ---
 
-<time>{{ date | readableDate }}</time>
-<article>{{ content | safe }}</article>
+    <div class="flex flex-col mx-auto mb-10 space-y-0 prose prose-zinc header xl:prose-lg prose-h1:leading-tight prose-p:tracking-tighter dark:prose-invert">
+        <p class="!mb-0 font-semibold text-sky-600 dark:text-sky-400 prose-h1:text-md">{{ date | readableDate }}</p>
+        <h1 class="">{{ title }}</h1>
+        {% if reference %}
+        <p  class="text-base">Source: {{ reference }}</p>
+        {% endif %}
+    </div>
+        <article class="items-center mx-auto leading-loose prose prose-headings:underline-offset-2 prose-headings:tracking-tight prose-img:mx-auto prose-sky prose-zinc xl:prose-lg dark:prose-invert prose-th:dark:decoration-transparent">
+            {{ content | safe }}
+        </article>

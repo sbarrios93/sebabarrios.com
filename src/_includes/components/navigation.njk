@@ -1,4 +1,4 @@
-<nav class="sticky top-0 z-50 px-2 py-3 border-gray-200 rounded backdrop-blur-lg bg-blur sm:px-4 supports-backdrop-blur:bg-white/95 dark:bg-[#001219]/75">
+<nav id="navbar" class=" md:border-b sticky top-0 z-50 px-2 py-3  backdrop-blur-xl sm:px-4 md:transition-[border-color] md:duration-500 md:border-gray-200/0 md:dark:border-gray-700/0 bg-slate-50/80 dark:bg-[#001219]/75">
   <div class="flex flex-wrap items-center justify-between px-4 lg:container lg:mx-auto">
     <a href="/" class="flex">
       <span
@@ -28,8 +28,8 @@
         {% for entry in navPages %}
         <li class="inline">
           <a href="{{ entry.url }}"
-            class="md:border-0 block pl-3 pr-4 py-2 border-b dark:text-sky-200  dark:md:font-normal md:font-medium md:p-0 border-gray-100 lowercase tracking-tight
-         {{'text-sky-400' if entry.url in page.url else 'text-zinc-800 hover:bg-gray-50  md:hover:bg-transparent  md:hover:text-sky-400'}}">
+            class="md:border-0 block pl-3 pr-4 py-2 border-b dark:text-sky-200  dark:md:font-normal md:font-medium md:p-0 border-gray-200 lowercase tracking-tight
+         {{'text-sky-400' if entry.url in page.url else 'text-zinc-800 dark:hover:bg-slate-800 hover:bg-sky-400/10  md:hover:bg-transparent  md:hover:text-sky-400'}}">
             {% set modTitle = [entry.title, '.'] | join %}
             {{ modTitle }}
           </a>
