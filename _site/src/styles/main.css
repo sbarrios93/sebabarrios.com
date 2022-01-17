@@ -929,9 +929,6 @@ input[type=file]::file-selector-button:hover {
 .lowercase {
   text-transform: lowercase;
 }
-.italic {
-  font-style: italic;
-}
 .leading-relaxed {
   line-height: 1.625;
 }
