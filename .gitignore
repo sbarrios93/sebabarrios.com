@@ -1,4 +1,5 @@
 node_modules
+<<<<<<< HEAD
 _site
 src/.DS_Store
 src/_includes/.DS_Store
@@ -160,3 +161,8 @@ dist
 **/IntegrationServer/packages/Wm*/
 
 
+=======
+/*
+/*/
+!/_site/
+>>>>>>> 7bf1aabf94d37d67320a24c99a14e89f98a90847

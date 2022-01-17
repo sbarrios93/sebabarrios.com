@@ -1,0 +1,150 @@
+<!doctype html>
+<meta charset="UTF-8">
+
+<head>
+  <html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 1 - Introduction</title>
+  <link rel="stylesheet" type="text/css" href="/src/styles/main.css" />
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+
+</head>
+
+<body class='mx-auto bg-slate-50 dark:bg-[#001219] text-zinc-800  dark:text-sky-50/[.85]'>
+  <nav id="navbar" class=" md:border-b sticky top-0 z-50 px-2 py-3  backdrop-blur-xl sm:px-4 md:transition-[border-color] md:duration-500 md:border-gray-200/0 md:dark:border-gray-700/0 bg-slate-50/80 dark:bg-[#001219]/75">
+  <div class="flex flex-wrap items-center justify-between px-4 lg:container lg:mx-auto">
+    <a href="/" class="flex">
+      <span
+        class="self-center font-medium tracking-tighter dark:font-normal text-md whitespace-nowrap text-zinc-800 dark:text-sky-100 hover:text-sky-400">sebastianbarrios</span>
+    </a>
+    <!-- Mobile menu button -->
+    <button data-collapse-toggle="mobile-menu" type="button"
+      class="inline-flex items-center justify-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900"
+      aria-controls="mobile-menu-2" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+          clip-rule="evenodd"></path>
+      </svg>
+      <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <!-- End mobile menu button -->
+    <!-- Menu -->
+    <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+      
+      <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm">
+        
+        <li class="inline">
+          <a href="/blog/"
+            class="md:border-0 block pl-3 pr-4 py-2 border-b dark:text-sky-200  dark:md:font-normal md:font-medium md:p-0 border-gray-200 lowercase tracking-tight
+         text-zinc-800 dark:hover:bg-slate-800 hover:bg-sky-400/10  md:hover:bg-transparent  md:hover:text-sky-400">
+            
+            Blog.
+          </a>
+        </li>
+        
+        <li class="inline">
+          <a href="/contact/"
+            class="md:border-0 block pl-3 pr-4 py-2 border-b dark:text-sky-200  dark:md:font-normal md:font-medium md:p-0 border-gray-200 lowercase tracking-tight
+         text-zinc-800 dark:hover:bg-slate-800 hover:bg-sky-400/10  md:hover:bg-transparent  md:hover:text-sky-400">
+            
+            Contact.
+          </a>
+        </li>
+        
+        <!-- Dark Mode Toggle -->
+        <li><button id="theme-toggle" type="button"
+            class="md:border-0 block pl-3 pr-4  text-zinc-400 dark:text-primary-200 rounded-lg text-sm p-2.5 md:p-0 ">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 " fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button></li>
+        <!-- End Dark Mode Toggle -->
+      </ul>
+    </div>
+    <!-- End Menu -->
+  </div>
+</nav>
+  <div class="px-2 py-10 md:py-20 sm:px-4">
+
+  <main>
+    
+    <div class="flex flex-col mx-auto mb-10 space-y-0 prose prose-zinc header xl:prose-lg prose-h1:leading-tight prose-p:tracking-tighter dark:prose-invert">
+        <p class="!mb-0 font-semibold text-sky-600 dark:text-sky-400 prose-h1:text-md">January 4, 2022</p>
+        <h1 class="">Chapter 1 - Introduction</h1>
+        
+        <p  class="text-base">Source: Pattern Recognition and Machine Learning</p>
+        
+    </div>
+        <article class="items-center mx-auto leading-loose prose prose-headings:underline-offset-2 prose-headings:tracking-tight prose-img:mx-auto prose-sky prose-zinc xl:prose-lg dark:prose-invert prose-th:dark:decoration-transparent">
+            <h2>Introduction</h2>
+<p>Pattern recognition relates to discover regularities in data in an automatic way by using computer algorithms. Using the regularities that it finds, it seeks to take actions such as classifying the data into different categories.</p>
+<p>Using the MNIST dataset as an example; we will represent the <em>target vector</em> <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">t</mi></mrow><annotation encoding="application/x-tex">\mathbf{t}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6349em;"></span><span class="mord mathbf">t</span></span></span></span></eq>, which will represent the identity of each digit. <strong>Keep in mind that there will be one target vector <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">t</mi></mrow><annotation encoding="application/x-tex">\mathbf{t}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6349em;"></span><span class="mord mathbf">t</span></span></span></span></eq> per digit image <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">x</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4444em;"></span><span class="mord mathbf">x</span></span></span></span></eq></strong>.</p>
+<p>The machine learning algorithm will output a result represented by <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">y</mi><mo stretchy="false">(</mo><mi mathvariant="bold">x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathbf{y(x)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">y</span><span class="mopen">(</span><span class="mord mathbf">x</span><span class="mclose">)</span></span></span></span></span></eq>, and the precise form of <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">y</mi><mo stretchy="false">(</mo><mi mathvariant="bold">x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathbf{y(x)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">y</span><span class="mopen">(</span><span class="mord mathbf">x</span><span class="mclose">)</span></span></span></span></span></eq> will be determined during training. Once the model is trained, the model can determine the identity of new digit images. The ability to categorize correctly new examples is known as <strong>generalization</strong>.</p>
+<p>The raw input variables are typically pre-processed to transform them into something that is easier to use to train and test the algorithm. This is called <strong>feature extraction</strong>. Pre-processing must be careful so that non of the important information is discarded.</p>
+<h2>Supervised and Unsupervised Learning</h2>
+<ol>
+<li><strong>Supervised Learning</strong>: When the training data contains examples of input vectors along their corresponding target vectors</li>
+<li><strong>Unsupervised Learning</strong>: When the data consists of a set of input vectors without any corresponding target values.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Supervised Learning</th>
+<th>Unsupervised Learning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regression: If the desired output consists of one or more continous variables</td>
+<td>Clustering: when the goal is to discover groups of similar examples within the data</td>
+</tr>
+<tr>
+<td>Classification: Assign each input vector to one of a finite number of discrete categories (like in the MNIST problem)</td>
+<td>Density Estimation: Determine the distribution of data within the input space</td>
+</tr>
+<tr>
+<td></td>
+<td>Visualization: project the data from a high-dimensional space to two or three dimensions</td>
+</tr>
+</tbody>
+</table>
+<h2>Reinforcement Learning</h2>
+<p>Learning algorithms in reinforcement learning are concerned with finding the action in a given situation that will give them the biggest reward. The process follows a sequence in which the algorithm performs a series of actions, which can affect the immediate reward but also may have an impact in its long term rewards. Though trial and error the algorithm learns to take the combination of actions that maximize the overall reward.</p>
+<p>There’s an inherent tradeoff in this learning process, as the algorithm must learn to balance its <em>exploration</em> phase (experimenting with new actions to see how favorable they are) with its <em>exploitation</em> phase, in which the system makes use of actions known to give high rewards.</p>
+<h2>Polynomial Curve Fitting</h2>
+<p>Say we have <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></eq> observations of <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span></eq>, where <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">x</mi><mo>=</mo><mstyle scriptlevel="1"><mtable rowspacing="0.1em" columnspacing="0.2778em"><mtr><mtd><mstyle scriptlevel="1" displaystyle="false"><msub><mi>x</mi><mn>1</mn></msub></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="1" displaystyle="false"><msub><mi>x</mi><mn>2</mn></msub></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="1" displaystyle="false"><mo lspace="0em" rspace="0em">…</mo></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="1" displaystyle="false"><msub><mi>x</mi><mi>n</mi></msub></mstyle></mtd></mtr></mtable></mstyle></mrow><annotation encoding="application/x-tex">\mathbf{x} = \begin{smallmatrix} x_1 \\ x_2 \\ \ldots \\ x_n\end{smallmatrix}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4444em;"></span><span class="mord mathbf">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.4em;vertical-align:-0.95em;"></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.45em;"><span style="top:-3.73em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mtight sizing reset-size6 size3"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.13em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mtight sizing reset-size6 size3"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.53em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mtight sizing reset-size6 size3"><span class="minner mtight">…</span></span></span><span style="top:-1.93em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mtight sizing reset-size6 size3"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1645em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.95em;"><span></span></span></span></span></span></span></span></span></span></span></eq> and <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">t</mi><mo>=</mo><mstyle scriptlevel="1"><mtable rowspacing="0.1em" columnspacing="0.2778em"><mtr><mtd><mstyle scriptlevel="1" displaystyle="false"><msub><mi>t</mi><mn>1</mn></msub></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="1" displaystyle="false"><msub><mi>t</mi><mn>2</mn></msub></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="1" displaystyle="false"><mo lspace="0em" rspace="0em">…</mo></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="1" displaystyle="false"><msub><mi>t</mi><mi>n</mi></msub></mstyle></mtd></mtr></mtable></mstyle></mrow><annotation encoding="application/x-tex">\mathbf{t} = \begin{smallmatrix} t_1 \\ t_2 \\ \ldots \\ t_n\end{smallmatrix}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6349em;"></span><span class="mord mathbf">t</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.4317em;vertical-align:-0.9658em;"></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4658em;"><span style="top:-3.7353em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mtight sizing reset-size6 size3"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.1247em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mtight sizing reset-size6 size3"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.5247em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mtight sizing reset-size6 size3"><span class="minner mtight">…</span></span></span><span style="top:-1.9142em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mtight sizing reset-size6 size3"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1645em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9658em;"><span></span></span></span></span></span></span></span></span></span></span></eq>,where the function used to obtain the data is <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mn>2</mn><mo>⋅</mo><mi>π</mi><mo>⋅</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y(x) = 2 \cdot \pi \cdot x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4445em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span></eq></p>
+<p><img src="figures/plot_c0_1-3.svg" alt="Plot"></p>
+<p>We can see that there’s an <em>underlying regularity</em>, which we wish to learn, but each individual observation does not follow exactly the curve, because they contain some degree of noise. This noise may arise from an intrinsic stochastic process, but <strong>more typically is due to there being some sources of variability that we have not observed</strong>.</p>
+
+        </article>
+  </main>
+</div>
+  <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+
+
+
+  <script src="/src/scripts/main.js"></script>
+</body>
+
+</html>

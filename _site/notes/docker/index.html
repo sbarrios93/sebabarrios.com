@@ -1,0 +1,200 @@
+<!doctype html>
+<meta charset="UTF-8">
+
+<head>
+  <html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Docker</title>
+  <link rel="stylesheet" type="text/css" href="/src/styles/main.css" />
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+
+</head>
+
+<body class='mx-auto bg-slate-50 dark:bg-[#001219] text-zinc-800  dark:text-sky-50/[.85]'>
+  <nav id="navbar" class=" md:border-b sticky top-0 z-50 px-2 py-3  backdrop-blur-xl sm:px-4 md:transition-[border-color] md:duration-500 md:border-gray-200/0 md:dark:border-gray-700/0 bg-slate-50/80 dark:bg-[#001219]/75">
+  <div class="flex flex-wrap items-center justify-between px-4 lg:container lg:mx-auto">
+    <a href="/" class="flex">
+      <span
+        class="self-center font-medium tracking-tighter dark:font-normal text-md whitespace-nowrap text-zinc-800 dark:text-sky-100 hover:text-sky-400">sebastianbarrios</span>
+    </a>
+    <!-- Mobile menu button -->
+    <button data-collapse-toggle="mobile-menu" type="button"
+      class="inline-flex items-center justify-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900"
+      aria-controls="mobile-menu-2" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+          clip-rule="evenodd"></path>
+      </svg>
+      <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <!-- End mobile menu button -->
+    <!-- Menu -->
+    <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+      
+      <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm">
+        
+        <li class="inline">
+          <a href="/blog/"
+            class="md:border-0 block pl-3 pr-4 py-2 border-b dark:text-sky-200  dark:md:font-normal md:font-medium md:p-0 border-gray-200 lowercase tracking-tight
+         text-zinc-800 dark:hover:bg-slate-800 hover:bg-sky-400/10  md:hover:bg-transparent  md:hover:text-sky-400">
+            
+            Blog.
+          </a>
+        </li>
+        
+        <li class="inline">
+          <a href="/contact/"
+            class="md:border-0 block pl-3 pr-4 py-2 border-b dark:text-sky-200  dark:md:font-normal md:font-medium md:p-0 border-gray-200 lowercase tracking-tight
+         text-zinc-800 dark:hover:bg-slate-800 hover:bg-sky-400/10  md:hover:bg-transparent  md:hover:text-sky-400">
+            
+            Contact.
+          </a>
+        </li>
+        
+        <!-- Dark Mode Toggle -->
+        <li><button id="theme-toggle" type="button"
+            class="md:border-0 block pl-3 pr-4  text-zinc-400 dark:text-primary-200 rounded-lg text-sm p-2.5 md:p-0 ">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 " fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button></li>
+        <!-- End Dark Mode Toggle -->
+      </ul>
+    </div>
+    <!-- End Menu -->
+  </div>
+</nav>
+  <div class="px-2 py-10 md:py-20 sm:px-4">
+
+  <main>
+    
+    <div class="flex flex-col mx-auto mb-10 space-y-0 prose prose-zinc header xl:prose-lg prose-h1:leading-tight prose-p:tracking-tighter dark:prose-invert">
+        <p class="!mb-0 font-semibold text-sky-600 dark:text-sky-400 prose-h1:text-md">December 7, 2021</p>
+        <h1 class="">Docker</h1>
+        
+        <p  class="text-base">Source: https://youtu.be/3c-iBn73dDE</p>
+        
+    </div>
+        <article class="items-center mx-auto leading-loose prose prose-headings:underline-offset-2 prose-headings:tracking-tight prose-img:mx-auto prose-sky prose-zinc xl:prose-lg dark:prose-invert prose-th:dark:decoration-transparent">
+            <h2>Basics</h2>
+<h3>Running a docker container</h3>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker run postgres:9.6</span></div><div class='line'><span style="color: #D6DEEB">Unable to find image </span><span style="color: #D9F5DD">'</span><span style="color: #ECC48D">postgres:9.6</span><span style="color: #D9F5DD">'</span><span style="color: #D6DEEB"> locally</span></div><div class='line'><span style="color: #D6DEEB">9.6: Pulling from library/postgres</span></div><div class='line'><span style="color: #D6DEEB">99dcd33b7a52: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">e13f4e0a897f: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">13e4006bd82e: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">9ef5686a034a: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">49b36de2354f: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">c6aa3a5a53ef: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">df4a4b5f9f5e: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">60555f757ad0: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">55f848e849b0: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">5184cab49345: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">956c2539b051: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">34159ccae077: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">c61333c4cb33: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">435dde6f1790: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">Digest: sha256:63f752ed01a989d0b20be000743b9425069e35277523120cee077bee79931048</span></div><div class='line'><span style="color: #D6DEEB">Status: Downloaded newer image </span><span style="color: #C792EA">for</span><span style="color: #D6DEEB"> postgres:9.6</span></div><div class='line'><span style="color: #D6DEEB">Error: Database is uninitialized and superuser password is not specified.</span></div><div class='line'><span style="color: #D6DEEB">       You must specify POSTGRES_PASSWORD to a non-empty value </span><span style="color: #C792EA">for</span><span style="color: #D6DEEB"> the</span></div><div class='line'><span style="color: #D6DEEB">       superuser. For example, </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">-e POSTGRES_PASSWORD=password</span><span style="color: #D9F5DD">"</span><span style="color: #D6DEEB"> on </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">docker run</span><span style="color: #D9F5DD">"</span><span style="color: #D6DEEB">.</span></div><div class='line'></div><div class='line'><span style="color: #D6DEEB">       You may also use </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">POSTGRES_HOST_AUTH_METHOD=trust</span><span style="color: #D9F5DD">"</span><span style="color: #D6DEEB"> to allow all</span></div><div class='line'><span style="color: #D6DEEB">       connections without a password. This is </span><span style="color: #7FDBCA">*</span><span style="color: #D6DEEB">not</span><span style="color: #7FDBCA">*</span><span style="color: #D6DEEB"> recommended.</span></div><div class='line'></div><div class='line'><span style="color: #D6DEEB">       See PostgreSQL documentation about </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">trust</span><span style="color: #D9F5DD">"</span><span style="color: #D6DEEB">:</span></div><div class='line'><span style="color: #D6DEEB">       https://www.postgresql.org/docs/current/auth-trust.html</span></div></code></div></pre>
+<p>Error is because postgress requires a password, so I try again</p>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker run -e POSTGRES_HOST_AUTH_METHOD=true postgres:9.6</span></div></code></div></pre>
+<p>Note:
+: <strong><code>docker run</code> will pull the image and start automatically</strong></p>
+<h3>Look at running containers</h3>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker ps</span></div><div class='line'><span style="color: #D6DEEB">CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS      NAMES</span></div><div class='line'><span style="color: #D6DEEB">ea3035896d4a   postgres:9.6   </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">docker-entrypoint.s…</span><span style="color: #D9F5DD">"</span><span style="color: #D6DEEB">   2 minutes ago   Up 2 minutes   5432/tcp   zealous_jang</span></div></code></div></pre>
+<p>This is an image. Docker has <strong>images</strong> and <strong>containers</strong></p>
+<ol>
+<li>
+<p>Images are the actual packages (configuration, PostgresSQL, Start Script)</p>
+</li>
+<li>
+<p>Container actually start the application(The running image. It contains the file system, env variables, etc.)</p>
+</li>
+</ol>
+<h3>Look at running and stopped containers</h3>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker ps -a</span></div><div class='line'><span style="color: #D6DEEB">CONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS                      PORTS      NAMES</span></div><div class='line'><span style="color: #D6DEEB">ea3035896d4a   postgres:9.6        </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">docker-entrypoint.s…</span><span style="color: #D9F5DD">"</span><span style="color: #D6DEEB">   5 minutes ago    Up 5 minutes                5432/tcp   zealous_jang</span></div><div class='line'><span style="color: #D6DEEB">3ed5928d2a7a   postgres:9.6        </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">docker-entrypoint.s…</span><span style="color: #D9F5DD">"</span><span style="color: #D6DEEB">   7 minutes ago    Exited (1) 7 minutes ago               frosty_banzai</span></div><div class='line'><span style="color: #D6DEEB">7c2cd2c06579   postgres:9.6        </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">docker-entrypoint.s…</span><span style="color: #D9F5DD">"</span><span style="color: #D6DEEB">   8 minutes ago    Exited (1) 8 minutes ago               optimistic_bell</span></div><div class='line'><span style="color: #D6DEEB">711510e39b55   postgres:9.6        </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">docker-entrypoint.s…</span><span style="color: #D9F5DD">"</span><span style="color: #D6DEEB">   9 minutes ago    Exited (1) 9 minutes ago               dreamy_lewin</span></div><div class='line'><span style="color: #D6DEEB">8ac29a7e8a61   postgres:9.6        </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">docker-entrypoint.s…</span><span style="color: #D9F5DD">"</span><span style="color: #D6DEEB">   13 minutes ago   Exited (1) 13 minutes ago              gallant_swanson</span></div><div class='line'><span style="color: #D6DEEB">7cb590a21f52   docker101tutorial   </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">/docker-entrypoint.…</span><span style="color: #D9F5DD">"</span><span style="color: #D6DEEB">   54 minutes ago   Exited (0) 50 minutes ago              docker-tutorial</span></div><div class='line'><span style="color: #D6DEEB">4560b51c46e4   alpine/git          </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">git clone https://g…</span><span style="color: #D9F5DD">"</span><span style="color: #D6DEEB">   57 minutes ago   Exited (0) 57 minutes ago              repo</span></div></code></div></pre>
+<h3>Pull an image</h3>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker pull redis</span></div><div class='line'><span style="color: #D6DEEB">Using default tag: latest</span></div><div class='line'><span style="color: #D6DEEB">latest: Pulling from library/redis</span></div><div class='line'><span style="color: #D6DEEB">968621624b32: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">6c8eacb95693: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">fb9503a65a3e: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">140c4202c2b0: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">07143683fefc: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">70407397a6a4: Pull </span><span style="color: #C5E478">complete</span></div><div class='line'><span style="color: #D6DEEB">Digest: sha256:2f502d27c3e9b54295f1c591b3970340d02f8a5824402c8179dcd20d4076b796</span></div><div class='line'><span style="color: #D6DEEB">Status: Downloaded newer image </span><span style="color: #C792EA">for</span><span style="color: #D6DEEB"> redis:latest</span></div><div class='line'><span style="color: #D6DEEB">docker.io/library/redis:latest</span></div></code></div></pre>
+<h3>Check all images on the system</h3>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker images</span></div><div class='line'><span style="color: #D6DEEB">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span></div><div class='line'><span style="color: #D6DEEB">redis               latest              6c8eacb95693       8 minutes ago       1.8 MB</span></div><div class='line'><span style="color: #D6DEEB">docker101tutorial   latest    e02af24b34f8   About an hour ago   27.2MB</span></div><div class='line'><span style="color: #D6DEEB">redis               latest    93f2223d3607   4 days ago          107MB</span></div><div class='line'><span style="color: #D6DEEB">postgres            9.6       068f7f032002   5 days ago          191MB</span></div><div class='line'><span style="color: #D6DEEB">alpine/git          latest    4ee6a3b79e0c   2 weeks ago         27.1MB</span></div></code></div></pre>
+<h3>Run container detached</h3>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker run -d redis</span></div><div class='line'><span style="color: #D6DEEB">19cf3a6251fe6463d4468dbfa3f28053c5cc634fdde588d34b9e46552e726f57</span></div></code></div></pre>
+<h3>Stop Container</h3>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker stop 19cf3 </span><span style="color: #637777">#</span><span style="color: #637777"> you don't need to specify the whole container id</span></div></code></div></pre>
+<h3>Container ports vs Host ports</h3>
+<p><img src="figures/2021-12-07-13-33-07.png" alt="binding ports"></p>
+<h4>Specify binding port</h4>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker run -p6000:6379 redis </span><span style="color: #637777">#</span><span style="color: #637777"> -p[host:container]</span></div></code></div></pre>
+<h3>Specify container name</h3>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #D6DEEB">docker run -d --name my-redis redis</span></div></code></div></pre>
+<h2>Debugging containers</h2>
+<h3>Execute a command in a running container</h3>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker </span><span style="color: #C5E478">exec</span><span style="color: #D6DEEB"> -it [id] /bin/bash</span></div></code></div></pre>
+<h2>Run vs. Start</h2>
+<p>Docker run will create a container from an image and start it.
+Docker start will start a container that was already created.</p>
+<h2>Developing with Docker</h2>
+<h3>Pull Images</h3>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker pull mongo</span></div><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker pull mongo-express</span></div></code></div></pre>
+<h3>Docker Network</h3>
+<p><img src="figures/2021-12-07-14-00-26.png" alt="Docker Network"></p>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker network ls</span></div><div class='line'><span style="color: #D6DEEB">NETWORK ID     NAME      DRIVER    SCOPE</span></div><div class='line'><span style="color: #D6DEEB">b9502eda23b8   bridge    bridge    </span><span style="color: #C792EA">local</span></div><div class='line'><span style="color: #D6DEEB">426b87e17873   host      host      </span><span style="color: #C792EA">local</span></div><div class='line'><span style="color: #D6DEEB">d817a5c2e0f6   none      null      </span><span style="color: #C792EA">local</span></div></code></div></pre>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker network create mongo-network</span></div><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker network ls</span></div><div class='line'><span style="color: #D6DEEB">NETWORK ID     NAME            DRIVER    SCOPE</span></div><div class='line'><span style="color: #D6DEEB">b9502eda23b8   bridge          bridge    </span><span style="color: #C792EA">local</span></div><div class='line'><span style="color: #D6DEEB">426b87e17873   host            host      </span><span style="color: #C792EA">local</span></div><div class='line'><span style="color: #D6DEEB">d69adcbb9546   mongo-network   bridge    </span><span style="color: #C792EA">local</span></div><div class='line'><span style="color: #D6DEEB">d817a5c2e0f6   none            null      </span><span style="color: #C792EA">local</span></div></code></div></pre>
+<h3>Docker Environment Variables</h3>
+<p>Use the <code>e</code> flag to set environment variables.</p>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker run -d \</span></div><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> -p 27017:27017 \</span></div><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> -e MONGO_INITDB_ROOT_USERNAME=root \</span></div><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> -e MONGO_INITDB_ROOT_PASSWORD=password \</span></div><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> --name mongodb \</span></div><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> --net mongo-network \</span></div><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> mongo</span></div></code></div></pre>
+<h2>Docker Compose</h2>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">yaml</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">version</span><span style="color: #D6DEEB">: </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">3</span><span style="color: #D9F5DD">"</span></div><div class='line'><span style="color: #7FDBCA">services</span><span style="color: #D6DEEB">:</span></div><div class='line'><span style="color: #D6DEEB">    </span><span style="color: #7FDBCA">mongodb</span><span style="color: #D6DEEB">:</span></div><div class='line'><span style="color: #D6DEEB">        </span><span style="color: #7FDBCA">image</span><span style="color: #D6DEEB">: </span><span style="color: #ECC48D">mongo</span></div><div class='line'><span style="color: #D6DEEB">        </span><span style="color: #7FDBCA">ports</span><span style="color: #D6DEEB">:</span></div><div class='line'><span style="color: #D6DEEB">        - </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">27017:27017</span><span style="color: #D9F5DD">"</span></div><div class='line'><span style="color: #D6DEEB">        </span><span style="color: #7FDBCA">environment</span><span style="color: #D6DEEB">:</span></div><div class='line'><span style="color: #D6DEEB">        </span><span style="color: #7FDBCA">MONGO_INITDB_ROOT_USERNAME</span><span style="color: #D6DEEB">: </span><span style="color: #ECC48D">root</span></div><div class='line'><span style="color: #D6DEEB">        </span><span style="color: #7FDBCA">MONGO_INITDB_ROOT_PASSWORD</span><span style="color: #D6DEEB">: </span><span style="color: #ECC48D">password</span></div><div class='line'><span style="color: #D6DEEB">    </span><span style="color: #7FDBCA">mongo-express</span><span style="color: #D6DEEB">:</span></div><div class='line'><span style="color: #D6DEEB">        </span><span style="color: #7FDBCA">image</span><span style="color: #D6DEEB">: </span><span style="color: #ECC48D">mongo-express</span></div><div class='line'><span style="color: #D6DEEB">        </span><span style="color: #7FDBCA">ports</span><span style="color: #D6DEEB">:</span></div><div class='line'><span style="color: #D6DEEB">        - </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">3000:3000</span><span style="color: #D9F5DD">"</span></div><div class='line'><span style="color: #D6DEEB">        </span><span style="color: #7FDBCA">depends_on</span><span style="color: #D6DEEB">:</span></div><div class='line'><span style="color: #D6DEEB">        - </span><span style="color: #ECC48D">mongodb</span></div></code></div></pre>
+<p>Docker compose will create a network for the containers to share.</p>
+<p><code>depends=on</code> will start the container after the other container is started.</p>
+<h3>Commands</h3>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker-compose mongo-compose.yaml up</span></div><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker-compose mongo-compose.yaml down</span></div></code></div></pre>
+<p><code>down</code> will also remove the network.</p>
+<h2>Dockerfile</h2>
+<p>Blueprint for building images.</p>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class='code-container'><code># base image
+FROM node
+
+# you can set environment variables here as well
+ENV MONGO_DB_USERNAME=admin \
+    MONGO_DB_PASSWORD=password
+
+# create /home/app folder
+RUN mkdir -p /home/app
+
+# Copy current folder files to /home/app
+# COPY EXECUTES ON THE HOST MACHINE
+COPY . /home/app
+
+# start the app with "node server.js" - this is the entrypoint
+CMD ["node", "server.js"]</code></div></pre><!-- Note from shiki-twoslash: the language dockerfile was not set up for Shiki to use, and so there is no code highlighting -->
+<h3>Make image</h3>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">bash</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">&gt;</span><span style="color: #D6DEEB"> docker build -t my-app:1.0 </span><span style="color: #C5E478">.</span></div></code></div></pre>
+<h2>Docker Volume</h2>
+<p><img src="figures/2021-12-07-21-46-44.png" alt="What is a docker volume"></p>
+<p>Data gets automatically replicated.</p>
+<h3>3 Volume Types</h3>
+<p>Host Volumes
+: using <code>docker run</code> we specify the paths to the volumes <code>-v /host/path:/container/path</code>. You decide where in the host the volume is.</p>
+<p>Anonymous Volumes
+: using <code>docker run</code> we specify the paths to the volumes <code>-v /container/path</code>. The volume is created in the <code>/var/lib/docker/volumes</code> host directory.</p>
+<p>Named Volumes
+: using <code>docker run</code> we specify the paths to the volumes <code>-v name:/container/path</code>. The volume is created in the <code>/var/lib/docker/volumes</code> host directory. You can reference the volume by name. This is the one used in production.</p>
+<h3>Docker volumes in Docker Compose</h3>
+<pre class="shiki night-owl" style="background-color: #011627; color: #d6deeb"><div class="language-id">yaml</div><div class='code-container'><code><div class='line'><span style="color: #7FDBCA">version</span><span style="color: #D6DEEB">: </span><span style="color: #D9F5DD">"</span><span style="color: #ECC48D">3</span><span style="color: #D9F5DD">"</span></div><div class='line'><span style="color: #7FDBCA">services</span><span style="color: #D6DEEB">:</span></div><div class='line'><span style="color: #D6DEEB">    </span><span style="color: #7FDBCA">mongodb</span><span style="color: #D6DEEB">:</span></div><div class='line'><span style="color: #D6DEEB">        </span><span style="color: #7FDBCA">image</span><span style="color: #D6DEEB">: </span><span style="color: #ECC48D">mongo</span></div><div class='line'><span style="color: #D6DEEB">        </span><span style="color: #7FDBCA">volumes</span><span style="color: #D6DEEB">:</span></div><div class='line'><span style="color: #D6DEEB">        - </span><span style="color: #ECC48D">db-data:/var/lib/mysql/data</span></div><div class='line'><span style="color: #D6DEEB">    </span><span style="color: #7FDBCA">mongo-express</span><span style="color: #D6DEEB">:</span></div><div class='line'><span style="color: #D6DEEB">        </span><span style="color: #7FDBCA">image</span><span style="color: #D6DEEB">: </span><span style="color: #ECC48D">mongo-express</span></div><div class='line'><span style="color: #D6DEEB">        </span><span style="color: #7FDBCA">volumes</span><span style="color: #D6DEEB">:</span></div><div class='line'><span style="color: #D6DEEB">        - </span><span style="color: #ECC48D">mongodb_data:/data/db</span></div><div class='line'></div><div class='line'><span style="color: #637777">#</span><span style="color: #637777"> we must list all the volumes at the end</span></div><div class='line'><span style="color: #7FDBCA">volumes</span><span style="color: #D6DEEB">:</span></div><div class='line'><span style="color: #D6DEEB">    </span><span style="color: #ECC48D">db-data</span></div><div class='line'><span style="color: #D6DEEB">    </span><span style="color: #ECC48D">mongodb_data</span></div></code></div></pre>
+
+        </article>
+  </main>
+</div>
+  <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+
+
+
+  <script src="/src/scripts/main.js"></script>
+</body>
+
+</html>
