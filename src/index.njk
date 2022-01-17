@@ -41,7 +41,7 @@ layout: layouts/base.njk
     </div>
 
     {% set cls = cycler('bg-indigo-300/10 ring-indigo-400/20', 'bg-orange-300/10 ring-orange-400/20', 'bg-blue-300/10 ring-blue-400/20', 'bg-green-300/10 ring-green-400/20', 'bg-purple-300/10 ring-purple-400/20') %}
-    {% for item in categories %}
+    {% for item in categories.topics %}
     {% set postslist = collections[item.name] %}
     {% set lenlist = postslist | length %}
     {% if lenlist > 0 %}
