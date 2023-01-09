@@ -1,28 +1,28 @@
 {
-	"topics": [
-        {
-            "name": "Hands on Machine Learning"
-		},
-		{
-			"name": "Pattern Recognition and Machine Learning"
-		},
-		{
-            "name": "Machine Learning"
-		},
-		{
-            "name": "Supervised Learning"
-		},
-		{
-            "name": "Unsupervised Learning"
-		},
-		{
-			"name": "XCS229II"
-		},
-		{
-			"name": "Shell"
-		},
-        {
-            "name": "DevOps"
-        }
-	]
+  "topics": [
+    {
+      "name": "Hands on Machine Learning"
+    },
+    {
+      "name": "Pattern Recognition and Machine Learning"
+    },
+    {
+      "name": "Machine Learning"
+    },
+    {
+      "name": "Supervised Learning"
+    },
+    {
+      "name": "Unsupervised Learning"
+    },
+    {
+      "name": "XCS229II"
+    },
+    {
+      "name": "Shell"
+    },
+    {
+      "name": "DevOps"
+    }
+  ]
 }

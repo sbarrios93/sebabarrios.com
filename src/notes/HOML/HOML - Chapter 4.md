@@ -16,36 +16,36 @@ There's basically two ways to train a linear regression model:
 
 ## 1.1. Linear Regression
 
-Linear models predict a target variable by computing the weighted sum of the input features (this could be a input vector \( \textbf{x} \)) plus a constant called the *bias term* (or *intercept term*).
+Linear models predict a target variable by computing the weighted sum of the input features (this could be a input vector \( \textbf{x} \)) plus a constant called the _bias term_ (or _intercept term_).
 
 \[
-     \hat{y} = \theta_0 + \theta_1 \cdot x_1 + \theta_2 \cdot x_2 + \cdots + \theta_n \cdot x_n
+\hat{y} = \theta_0 + \theta_1 \cdot x_1 + \theta_2 \cdot x_2 + \cdots + \theta_n \cdot x_n
 \]
 
 In vectorized form:
 
-\[ \hat{y} = h_ \mathbf{\theta } \left( \mathbf{x} \right)  = \mathbf{\theta } \cdot \mathbf{x}\]
+\[ \hat{y} = h\_ \mathbf{\theta } \left( \mathbf{x} \right) = \mathbf{\theta } \cdot \mathbf{x}\]
 
-To train the model, we look for the value of \( \theta  \) that minimizes the RMSE. But in practice we seek to minimize the MSE, because it it simpler and the value that minimizes a function \( f(x) \) also minimizes the function \( \sqrt[]{f(x)} \).
+To train the model, we look for the value of \( \theta \) that minimizes the RMSE. But in practice we seek to minimize the MSE, because it it simpler and the value that minimizes a function \( f(x) \) also minimizes the function \( \sqrt[]{f(x)} \).
 
 Now, recall that the MSE is equal to
 
 \[
-    MSE \left( \mathbf{X}, h_\theta    \right)  = \frac{1}{m_i} \sum_{i=1}^{m} \left( \mathbf{\theta }^T x^{(i)}  - y^{(i)} \right)  ^ 2
+MSE \left( \mathbf{X}, h*\theta \right) = \frac{1}{m_i} \sum*{i=1}^{m} \left( \mathbf{\theta }^T x^{(i)} - y^{(i)} \right) ^ 2
 \]
 
 ### 1.1.1. The normal equation
 
 For the linear regression there is a closed form solution to minimize the cost function, called the normal equation.
 
-The values of \( \theta  \) that minimize the cost function is given by:
+The values of \( \theta \) that minimize the cost function is given by:
 
 \[
-     \hat{\mathbf{\theta} } = \left( \mathbf{X}^T \mathbf{X}  \right) ^ {-1} \mathbf{X}^T \mathbf{y}
-      \]
+\hat{\mathbf{\theta} } = \left( \mathbf{X}^T \mathbf{X} \right) ^ {-1} \mathbf{X}^T \mathbf{y}
+\]
 
 > **A note on computational complexity**
-> The normal equation computes the inverse of \( \mathbf{X}^T \mathbf{X} \) which is an (n + 1) x (n + 1) matrix. The computational complexity of inverting a matrix like that is roughly \( \mathcal{O} \left( n^{2.3} \right) \text{to}\,  \mathcal{O} \left( n^3 \right)\). In other words, by doubling the number of features, the computation time increases to 5.3 to 8 times.
+> The normal equation computes the inverse of \( \mathbf{X}^T \mathbf{X} \) which is an (n + 1) x (n + 1) matrix. The computational complexity of inverting a matrix like that is roughly \( \mathcal{O} \left( n^{2.3} \right) \text{to}\, \mathcal{O} \left( n^3 \right)\). In other words, by doubling the number of features, the computation time increases to 5.3 to 8 times.
 
 ## 1.2. Gradient Descent
 
@@ -62,12 +62,13 @@ It is important to note that not necessarily Gradient Descent will find the glob
 
 Fortunately, the MSE is a convex function, so we know that it will only have one minimum: the global minimum.
 
-To implement Gradient Descent, we need to compute the gradient of the cost function with respect to each model parameter \( \theta _j \).
-The partial derivative w.r.t \( \theta _j \) is
+To implement Gradient Descent, we need to compute the gradient of the cost function with respect to each model parameter \( \theta \_j \).
+The partial derivative w.r.t \( \theta \_j \) is
 
 \[
-     \frac{\partial }{\partial \theta _j} MSE \left( \mathbf{\theta } \right) = \frac{2}{m}   \sum_{i=1}^{m} \left( \mathbf{\theta} ^T \mathbf{x} ^{(i)} - y ^{(i)} \right) x_j^{(i)}
-      \]
+\frac{\partial }{\partial \theta _j} MSE \left( \mathbf{\theta } \right) = \frac{2}{m} \sum_{i=1}^{m} \left( \mathbf{\theta} ^T \mathbf{x} ^{(i)} - y ^{(i)} \right) x_j^{(i)}
+\]
+
 ### 1.2.1. Batch Gradient Descent
 
 Batch Gradient Descent will calculate at each step the gradients for all the parameters and for all the training set. This makes it terribly slow for very large datasets, but it actually performs better than other algorithms when there are a large number of feature.
@@ -75,23 +76,23 @@ Batch Gradient Descent will calculate at each step the gradients for all the par
 The full gradient vector of the cost function will be:
 
 \[
-    \nabla _\theta MSE \left( \theta  \right) =
-    \begin{bmatrix}
-    \frac{\partial }{\partial \theta_0 } MSE \left( \theta  \right) \\
-    \frac{\partial }{\partial \theta_1 } MSE \left( \theta  \right) \\
-    \frac{\partial }{\partial \theta_2 } MSE \left( \theta  \right) \\
-    \vdots \\
-    \frac{\partial }{\partial \theta_n } MSE \left( \theta  \right) \\
+\nabla \_\theta MSE \left( \theta \right) =
+\begin{bmatrix}
+\frac{\partial }{\partial \theta_0 } MSE \left( \theta \right) \\
+\frac{\partial }{\partial \theta_1 } MSE \left( \theta \right) \\
+\frac{\partial }{\partial \theta_2 } MSE \left( \theta \right) \\
+\vdots \\
+\frac{\partial }{\partial \theta_n } MSE \left( \theta \right) \\
 \end{bmatrix}
 \]
 
-Now, keep in mind that the gradient vector points uphill, so we actually subtract this from \( \theta  \) to take the next step.
+Now, keep in mind that the gradient vector points uphill, so we actually subtract this from \( \theta \) to take the next step.
 
-Let \( \eta  \) be the learning rate, then
+Let \( \eta \) be the learning rate, then
 
 \[
-     \theta^{(\text{next step})} = \mathbf{\theta } - \eta \nabla _ \theta MSE \left( \theta  \right)
-      \]
+\theta^{(\text{next step})} = \mathbf{\theta } - \eta \nabla \_ \theta MSE \left( \theta \right)
+\]
 
 ### 1.2.2. Stochastic Gradient Descent
 
@@ -102,7 +103,6 @@ Working on a single instance at a time, it it much faster than BGD. While using 
 Now, because it is stochastic, the algorithm is much less regular than Batch Gradient Descent. It will decrease and get close to the minimum, but it will continue hovering around it. This algorithm will most likely never reach the optimum, as Batch Gradient Descent will.
 
 An advantage of SGD is that it has a better chance than Batch Gradient Descent of getting out of a local minimum (and finding the global minimum) because the path that follows Stochastic Gradient Descent is much more irregular.
-
 
 A way to fix the issue of hovering around the minimum is to use what is called a **learning schedule**
 
@@ -137,8 +137,8 @@ A common way to reduce overfitting is to regularize the data (i.e. to constrain 
 
 Ridge regression is a form of regularized Linear regression, where a regularization term is added to the cost function, where the regularization term is
 \[
-   \alpha \sum_{i=1}^{n} \theta _i ^ {2}
-      \]
+\alpha \sum\_{i=1}^{n} \theta \_i ^ {2}
+\]
 
 By adding this term we force the algorithm to keep the weights as small as possible while fitting the data.
 
@@ -146,18 +146,19 @@ By adding this term we force the algorithm to keep the weights as small as possi
 
 So the ridge regression cost function for the training step will be:
 \[
-J(\theta ) = MSE(\theta) + \alpha \frac{1}{2} \sum_{i=1}^{n}\theta _i ^ 2
-      \]
+J(\theta ) = MSE(\theta) + \alpha \frac{1}{2} \sum\_{i=1}^{n}\theta \_i ^ 2
+\]
 **Note that \( \theta_0 \) is not regularized**.
 
-It is important to note that if we let \( \mathbf{w} \) be the vector of the weights \(  (\theta _1...\theta _n)  \) then the regularization term will be equal to \( \frac{1}{2} \left(\left\| w \right\|_2\right)^2 \), where \( \left\| w \right\| _2 \) represents the \( \ell _2 \) norm of the weight vector.
+It is important to note that if we let \( \mathbf{w} \) be the vector of the weights \( (\theta \_1...\theta \_n) \) then the regularization term will be equal to \( \frac{1}{2} \left(\left\| w \right\|\_2\right)^2 \), where \( \left\| w \right\| \_2 \) represents the \( \ell \_2 \) norm of the weight vector.
 
 #### 1.4.1.1. The Closed Form Solution
-Let \( \mathbf{A} \) be the identity matrix of shape \( \left( n + 1 \right) \times \left( n + 1 \right)  \), with the slight modification of having a 0 in the top-left cell (which is the bias term), then the closed-form solution for the Ridge Regression is:
+
+Let \( \mathbf{A} \) be the identity matrix of shape \( \left( n + 1 \right) \times \left( n + 1 \right) \), with the slight modification of having a 0 in the top-left cell (which is the bias term), then the closed-form solution for the Ridge Regression is:
 
 \[
-     \hat{\theta } = \left( X^TX + \alpha \mathbf{A} \right) ^ {-1} X^T \mathbf{y}
-      \]
+\hat{\theta } = \left( X^TX + \alpha \mathbf{A} \right) ^ {-1} X^T \mathbf{y}
+\]
 
 ### 1.4.2. Lasso Regression
 
@@ -166,33 +167,34 @@ THis is another regularized version of Linear Regression. In this case, the regu
 The cost function will be
 
 \[
-     J \left( \theta  \right) = MSE \left( \theta  \right) + \alpha \sum_{i=1}^{n} \mid \theta _1 \mid
-      \]
-Now, the Lasso Regression tendos to eliminate weights of the least important features (setting their \( \theta  \) to 0 ). In other words, Lasso Regression automatically performs feature selection and outputs a *sparse model*.
+J \left( \theta \right) = MSE \left( \theta \right) + \alpha \sum\_{i=1}^{n} \mid \theta \_1 \mid
+\]
+Now, the Lasso Regression tendos to eliminate weights of the least important features (setting their \( \theta \) to 0 ). In other words, Lasso Regression automatically performs feature selection and outputs a _sparse model_.
 
-We need to be careful because the Lasso cost function is not diffrentiable at \( \theta_i  = 0 \, \forall i \). To make Gradient Descent work, we will need a subgradient vector \( \mathbf{g} \) when \( \theta_i = 0\).
+We need to be careful because the Lasso cost function is not diffrentiable at \( \theta_i = 0 \, \forall i \). To make Gradient Descent work, we will need a subgradient vector \( \mathbf{g} \) when \( \theta_i = 0\).
 
 Then:
 \[
-      g \left( \theta , J \right) = \nabla _\theta  MSE \left(  \theta  \right) + \alpha
-      \begin{pmatrix}
-      s(\theta_1) \\
-      s(\theta_2) \\
-      \vdots \\
-      s(\theta_n)
-      \end{pmatrix} \text{where } s(\theta_i)  = \begin{cases}
-      -1 &\text{if } \theta_i < 0\\
-      0  &\text{if } \theta_i = 0\\
-      1 &\text{if } \theta_i > 0
-      \end{cases}
+g \left( \theta , J \right) = \nabla \_\theta MSE \left( \theta \right) + \alpha
+\begin{pmatrix}
+s(\theta_1) \\
+s(\theta_2) \\
+\vdots \\
+s(\theta_n)
+\end{pmatrix} \text{where } s(\theta_i) = \begin{cases}
+-1 &\text{if } \theta_i < 0\\
+0 &\text{if } \theta_i = 0\\
+1 &\text{if } \theta_i > 0
+\end{cases}
 \]
 
 ### 1.4.3. Elastic Net
-This is a combination of using Ridge Regression and Lasso Regression. Where the mix is controlled by the mix ratio \( r \). When \( r = 0 \) then Elastic Net is the same as Ridge Regression and when \( r = 1  \) it is equal to Lasso Regression.
+
+This is a combination of using Ridge Regression and Lasso Regression. Where the mix is controlled by the mix ratio \( r \). When \( r = 0 \) then Elastic Net is the same as Ridge Regression and when \( r = 1 \) it is equal to Lasso Regression.
 
 \[
-      J(\theta ) = MSE (\theta) + r \alpha \sum_{i = 1}^{n } \mid \theta _i \mid + \frac{1-r}{2} \alpha \sum_{i=1}^{n} \theta ^ 2 _ i
-       \]
+J(\theta ) = MSE (\theta) + r \alpha \sum*{i = 1}^{n } \mid \theta \_i \mid + \frac{1-r}{2} \alpha \sum*{i=1}^{n} \theta ^ 2 \_ i
+\]
 
 ### 1.4.4. When to use what
 
@@ -218,96 +220,97 @@ If the probability is greater than 50%, then the model predicts that the instanc
 More formally:
 
 Let \( k \) be the classes where \( k = \left\{ 0,1 \right\} \) meaning that if \( k = 1 \) then it belongs to the class and if \( k = 0 \) then it doesn't belong to the class. Then:
-      \[ \hat{k} = 1 \iff p(k = 1) \geq 0.5 \]
+\[ \hat{k} = 1 \iff p(k = 1) \geq 0.5 \]
 
-The class \(  k = 1 \) is also known as the positive class and the class \( k = 0 \) is known as the negative class.
+The class \( k = 1 \) is also known as the positive class and the class \( k = 0 \) is known as the negative class.
 
 ### Probabilities
 
-A Logistic Regression computes a weighted sum of the input features as seen previously (i.e. \( \theta^T  \mathbf{x} \) ) but it outputs the logistic of the linear function.
+A Logistic Regression computes a weighted sum of the input features as seen previously (i.e. \( \theta^T \mathbf{x} \) ) but it outputs the logistic of the linear function.
 
 The equation is:
 \[
-\hat{p} = h_\theta ( \mathbf{x}) = \sigma \left(  \theta^T\mathbf{x} \right)  \] where \( \sigma \left( \cdot \right) \) is the sigmoid function.
+\hat{p} = h\_\theta ( \mathbf{x}) = \sigma \left( \theta^T\mathbf{x} \right) \] where \( \sigma \left( \cdot \right) \) is the sigmoid function.
 
 Then the full logistic function is
 
- \[
-      h _ \theta (x) = \sigma(\theta^T x) = \frac{1}{1 + \exp (- \theta ^T x)}
-       \]
+\[
+h \_ \theta (x) = \sigma(\theta^T x) = \frac{1}{1 + \exp (- \theta ^T x)}
+\]
 
 ### Training and Cost Function
 
-The objective is to set the parameter vector \( \theta  \) so that the model estimates high probabilities for a positive instance and low probability for a negative instance.
+The objective is to set the parameter vector \( \theta \) so that the model estimates high probabilities for a positive instance and low probability for a negative instance.
 
 Then the cost function for a single training instance would be soemthing like this
 \[
-c \left( \theta  \right) = \begin{cases}
--\log{\hat{p}}   &\text{if } y = 1 \\
+c \left( \theta \right) = \begin{cases}
+-\log{\hat{p}} &\text{if } y = 1 \\
 -\log{(1-\hat{p})} &\text{if } y = 0\\
-\end{cases}  \]
+\end{cases} \]
 
-Which makes sense because \( - \log (x) \) grows very large when \( x  \) approaches 0, so the cost function will be large if the model estimates a probability close to 0 for a positive instance, and it will be very large if the model estimates a probability close to 1 for a negative instance.
+Which makes sense because \( - \log (x) \) grows very large when \( x \) approaches 0, so the cost function will be large if the model estimates a probability close to 0 for a positive instance, and it will be very large if the model estimates a probability close to 1 for a negative instance.
 
-Then the cost function will be, which is called the *log-loss*
+Then the cost function will be, which is called the _log-loss_
 
 \[
-      J (\theta) = - \frac{1}{m } \sum_{i=1}^{m }\left[ y ^{(i)} \log \left( \hat{p}^{(i)} \right) + \left( 1 - y^{(i)} \right)\log \left( 1 - \hat{p}^{(i)}    \right)   \right]
-       \]
+J (\theta) = - \frac{1}{m } \sum\_{i=1}^{m }\left[ y ^{(i)} \log \left( \hat{p}^{(i)} \right) + \left( 1 - y^{(i)} \right)\log \left( 1 - \hat{p}^{(i)} \right) \right]
+\]
 We know that the cost function is convex, so Gradient Descent is guaranteed to find the global minimum.
 
 The partial derivatives are the following:
 
 \[
-      \frac{\partial }{\partial {\theta_j}} J \left( \theta  \right) = \frac{1}{m } \sum_{i=1}^{m } \left( \sigma \left( \theta^T x ^ {(i)} \right) - y ^{(i)}  \right) x_j
-       \]
+\frac{\partial }{\partial {\theta*j}} J \left( \theta \right) = \frac{1}{m } \sum*{i=1}^{m } \left( \sigma \left( \theta^T x ^ {(i)} \right) - y ^{(i)} \right) x_j
+\]
 
 ## Softmax Regression
 
 The logistic regression can be generalized to support multiple classes directly, without having to train and combine multiple binary classifiers.
 
-When given an instance \( \mathbf{x} \), the softmax regression model first computes a score \( s_k(\mathbf{x }) \) for each class \( k  \), then estimates the probability for each class by applying the softmax function to the scores.
+When given an instance \( \mathbf{x} \), the softmax regression model first computes a score \( s_k(\mathbf{x }) \) for each class \( k \), then estimates the probability for each class by applying the softmax function to the scores.
 
 First, the softmax score will be
 
 \[ s_k \left( \mathbf{x } \right) = (\theta^T_k) \mathbf{x} \]
 
-**Note that each class has its own dedicated parameter vector \( \theta _k \)**
+**Note that each class has its own dedicated parameter vector \( \theta \_k \)**
 
-Then we can estimate the probability \( \hat{p }_k   \) that the instance belongs to class \( k \) by running the scores through the softmax function.
+Then we can estimate the probability \( \hat{p }\_k \) that the instance belongs to class \( k \) by running the scores through the softmax function.
 
 The softmax function computes the exponential of every score, then normalizes them so they sum to 1.
 
 The softmax function is
 
 \[
-      \hat{p_k} = \sigma \left( s(x) \right)_k = \frac{\exp \left( s_k (x) \right) }{\sum_{j=1}^{k } \exp (s_j(x))}
-       \]
+\hat{p*k} = \sigma \left( s(x) \right)\_k = \frac{\exp \left( s_k (x) \right) }{\sum*{j=1}^{k } \exp (s_j(x))}
+\]
 
-Here \( K \) is the number of classes, while \( s(x) \) is a vector containing the scores of each class for the instance \( x  \). Finally, \( \sigma \left( s \left( x  \right)  \right)  \) is the estimated probability that the instance \( x \) belongs to class k, given the scores of each class for that instance.
+Here \( K \) is the number of classes, while \( s(x) \) is a vector containing the scores of each class for the instance \( x \). Finally, \( \sigma \left( s \left( x \right) \right) \) is the estimated probability that the instance \( x \) belongs to class k, given the scores of each class for that instance.
 
 The Softmax Regression classifier predicts the class with the highest estimated probability.
 
 The Classifier Prediction will be
 
 \[
- \hat{y } = \arg \max_{k } \sigma \left( s \left( x  \right)  \right)_k = \arg \max_{k }  s_k \left( x  \right) = \arg \max_{k } \left( \theta ^T _k x   \right)
-       \]
- > The softmax regressionis multiclass, not multioutput. Meaning that it predicts only one class at a time, so the classes should be **mutually exclusive**.
+\hat{y } = \arg \max*{k } \sigma \left( s \left( x \right) \right)\_k = \arg \max*{k } s*k \left( x \right) = \arg \max*{k } \left( \theta ^T \_k x \right)
+\]
 
- The objective is to have a model that estimates a high probability for the target class. Minimizing the cost function (called **cross entropy**) we should be able to optimize for the parameters that achieve this goal.
+> The softmax regressionis multiclass, not multioutput. Meaning that it predicts only one class at a time, so the classes should be **mutually exclusive**.
 
- **Cross entropy is frequently used to measure how well a set of estimated class probabilities matches the target classes**
+The objective is to have a model that estimates a high probability for the target class. Minimizing the cost function (called **cross entropy**) we should be able to optimize for the parameters that achieve this goal.
 
- The cross entropy cost function will be
+**Cross entropy is frequently used to measure how well a set of estimated class probabilities matches the target classes**
 
- \[
-       J \left( \theta  \right) = - \frac{1}{m } \sum_{i=1}^{m} \sum_{k=1}^{K } y^{(i)}_k \log \left( \hat{p }_k^{(i)} \right)
-        \]
-        Where \( y_k^{(i)} \)  is the target probability that the \( \imath ^{th} \) instance belongs to class \( k  \).
+The cross entropy cost function will be
+
+\[
+J \left( \theta \right) = - \frac{1}{m } \sum*{i=1}^{m} \sum*{k=1}^{K } y^{(i)}\_k \log \left( \hat{p }\_k^{(i)} \right)
+\]
+Where \( y_k^{(i)} \) is the target probability that the \( \imath ^{th} \) instance belongs to class \( k \).
 
 The gradient vector of the cost function with regards to \( \theta_k \) will be:
 
 \[
-      \nabla _ {\theta_k} J (\Theta) = \frac{1}{m } \sum_{i=1}^{m }\left( \hat{p }_k ^{(i)} - y^{(i)}_k \right) x^{(i)}
-       \]
+\nabla _ {\theta_k} J (\Theta) = \frac{1}{m } \sum_{i=1}^{m }\left( \hat{p }\_k ^{(i)} - y^{(i)}\_k \right) x^{(i)}
+\]
